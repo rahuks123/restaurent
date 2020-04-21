@@ -1,0 +1,27 @@
+.Signup-page {
+  display: ;
+}
+.NewUsers-title {
+  margin-bottom: 40px;
+  font-size: 30px;
+  color: rgb(221, 228, 235);
+}
+.Form-section {
+  margin-bottom: 30px;
+}
+.Form-input {
+  font-size: 20px;
+  padding: 8px;
+}
+.FormInput-label {
+  color: rgb(221, 228, 235);
+  margin-bottom: 8px;
+}
+.Form-submit {
+  font-size: 20px;
+  padding: 10px;
+  background-color: #61a061;
+  color: black;
+  border: 0;
+  border-radius: 8px;
+}

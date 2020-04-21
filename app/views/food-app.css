@@ -1,0 +1,119 @@
+/* ##########  BASIC HEADERS   ########### */
+nav,
+header,
+footer {
+  display: block;
+}
+body {
+  background-image: url(background-pic.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  line-height: 1;
+  margin: 0;
+}
+.container {
+  width: 100%;
+  margin: auto;
+  padding-top: 4%;
+  padding-bottom: 4%;
+}
+
+/*############ The Navbar ########3*/
+nav {
+  width: 100%;
+  margin: 0;
+}
+nav ul {
+  background-color: rgb(177, 177, 177);
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+}
+ul.navbar li {
+  list-style: none;
+  float: left;
+}
+ul.navbar li.navbar-right {
+  float: right;
+}
+ul.navbar li a {
+  display: block;
+  text-decoration: none;
+  min-height: 16px;
+  padding: 14px;
+  text-transform: uppercase;
+  color: black;
+}
+ul.navbar li a:hover {
+  background-color: rgb(75, 75, 83);
+  color: white;
+}
+
+/*########### DROPDOWN ##############*/
+
+ul.navbar li.dropdown {
+  display: none;
+}
+#section-1-gradient {
+  background: blue;
+  background: -webkit-linear-gradient(blue, lightblue);
+}
+/*######## AFTER CLICKING ########3*/
+@media screen and (max-width: 680px) {
+  ul.navbar li:not(:nth-child(1)) {
+    display: none;
+  }
+  ul.navbar li.dropdown {
+    display: block;
+    float: right;
+  }
+}
+ul.navbar.responsive li.dropdown {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+ul.navbar.responsive {
+  position: relative;
+}
+ul.navbar.responsive li {
+  display: inline;
+  float: none;
+}
+ul.navbar.responsive li a {
+  display: block;
+  text-align: left;
+}
+
+/* ###########  THE MENU ITEMS   ############### */
+.menu {
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.row {
+  display: flex;
+  color: #fff;
+  width: 100%;
+}
+.row::after {
+  display: block;
+  clear: both;
+  content: "";
+}
+.col-3 {
+  width: 25%;
+}
+.col-6 {
+  width: 50%;
+}
+* {
+  box-sizing: border-box;
+}
+[class*="col-"] {
+  border: 3px solid grey;
+  margin: 0px;
+  padding: 15px;
+  float: left;
+}

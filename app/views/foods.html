@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>My CSS Website</title>
+  <link rel=stylesheet href="food-app.css">
+</head>
+
+<body>
+  <main class="main">
+  <nav>
+    <ul class="navbar" id="dropdownclick">
+      <li><a href="#home"> Home </a></li>
+      <li><a href="#home"> Contact </a></li>
+      <li><a href="#home"> About </a></li>
+      <li><a href="#home"> News </a></li>
+      <li class="navbar-right"><a href="#home"> sign IN </a></li>
+      <li class="navbar-right"><a href="#home"> sign UP </a></li>
+      <li class="dropdown"><a href="javascript:void(0);" onclick="dropdownmenu()">&#9776</a></li>
+    </ul>
+  </nav>
+
+  <script>
+    function dropdownmenu(){
+        var x=document.getElementById("dropdownclick");
+        if(x.className === "navbar"){
+            x.className+= " responsive";
+        }
+        else{
+            x.className= "navbar";
+        }
+    }
+  </script>
+
+<!-- <div class="background-pic">
+  <img src="wallpaper.jpg">
+</div> -->
+<div class="menu">
+  <h2>MENU</h2>
+</div>
+
+  <div class="row">
+    <h4 class="col-3">QUANTITY</h4>
+    <h4 class="col-6">NAME OF THE ITEM</h4>
+    <h4 class="col-3">PRICE</h4>
+  </div>
+
+  <div class="row">
+    <p class="col-3">1</p>
+    <p class="col-6">idle sambaar</p>
+    <p class="col-3">100</p>
+  </div>
+
+  <div class="row">
+    <p class="col-3">4</p>
+    <p class="col-6">dosa sambaar</p>
+    <p class="col-3">1000</p>
+  </div>
+  <!-- <table class="menu">
+    <tr>
+      <th>QUANTITY</th>
+      <th>this is an food item</th>
+      <th>PRICE</th>
+    </tr>
+
+    <tr>
+      <th>QUANTITY</th>
+      <th>this is an food item</th>
+      <th>PRICE</th>
+    </tr>
+    <tr>
+      <th>QUANTITY</th>
+      <th>this is an food item</th>
+      <th>PRICE</th>
+    </tr>
+
+  </table> -->
+  </main>
+</body>
+</html>
