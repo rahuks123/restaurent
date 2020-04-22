@@ -1,5 +1,7 @@
-.Signup-page {
-  display: ;
+.Signing-page {
+  text-align: center;
+  color: rgb(221, 228, 235);
+};
 }
 .NewUsers-title {
   margin-bottom: 40px;
@@ -14,7 +16,8 @@
   padding: 8px;
 }
 .FormInput-label {
-  color: rgb(221, 228, 235);
+  display: block;
+  color: goldenrod;
   margin-bottom: 8px;
 }
 .Form-submit {
