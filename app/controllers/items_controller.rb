@@ -1,6 +1,17 @@
 class ItemsController < ApplicationController
   def index
     render "index"
-    # render plain: Item.order(:due_date).map{|item| item.to_pleasant_string}.join("\n")
+  end
+
+  def new
+    render "items/new"
+  end
+
+  def create
+    Item.create!(
+      name: params[:name],
+      quantity: params[:quantity],
+      price: params[:price],
+    )
   end
 end

@@ -2,12 +2,19 @@
   text-align: center;
   color: rgb(221, 228, 235);
 };
+
+.Usersnew{
+  display: block;
+  margin-left: 500px;
+  color: rgb(221, 228, 235);
+}
 }
 .NewUsers-title {
   margin-bottom: 40px;
   font-size: 30px;
   color: rgb(221, 228, 235);
 }
+
 .Form-section {
   margin-bottom: 30px;
 }
@@ -27,4 +34,9 @@
   color: black;
   border: 0;
   border-radius: 8px;
+}
+.User-name{
+  color: white;
+  display: flex;
+  justify-content: space-between;
 }

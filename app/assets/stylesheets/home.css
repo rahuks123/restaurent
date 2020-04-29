@@ -1,0 +1,42 @@
+.home-page-main {
+  display: flex;
+  flex-wrap: wrap;
+  overflow: hidden;
+}
+.Home-authenticate {
+  content: " ";
+  font-size: 20px;
+  margin-left: 25%;
+}
+.header {
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+  margin-top: 15px;
+}
+
+.Page-title {
+  font-size: 40px;
+  font-weight: 600;
+  color: orangered;
+}
+
+.moto {
+  margin-right: 8px;
+  margin-bottom: 30px;
+  display: block;
+}
+/*##############  picture  ########3333  */
+.side-pic {
+  width: 50%;
+  height: 100%;
+  image-rendering: auto;
+  image-rendering: crisp-edges;
+  image-rendering: pixelated;
+  border: black solid 5px;
+}
+.info {
+  width: 50%;
+  background-color: rgb(241, 241, 241);
+}

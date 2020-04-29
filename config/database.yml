@@ -8,7 +8,7 @@ development:
   host: localhost
   user: postgres
   password: changeme
-  database: saas_db
+  database: cafeteria_db
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
