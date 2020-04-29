@@ -1,0 +1,14 @@
+<div class="row">
+    <h4 class="col-3">DESCRIPTION</h4>
+    <h4 class="col-6">NAME OF THE ITEM</h4>
+    <h4 class="col-3">PRICE (Rs)</h4>
+  </div>
+
+<div class="row">
+
+  <% MenuItem.find_each do |item|%>
+    <p class="col-3"><%= item.description %></p>
+    <p class="col-6"> <%= item.name %> (1)</p>
+    <p class="col-3"><%= item.price %></p>
+  <% end %>
+</div>

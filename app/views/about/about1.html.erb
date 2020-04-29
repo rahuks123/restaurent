@@ -1,4 +1,17 @@
-<p>
-  EXODUS, is the caffeteria that was founded by Rahul k.s and Karthik together.
-  It is an online food delivering website
-</p>
+<body>
+  <main class="main">
+
+    <nav>
+      <ul class="navbar" id="dropdownclick">
+        <li><a href=<%= new_order_path%>> ORDER </a></li>
+        <li><a href=/menu_items> MENU </a></li>
+        <% if @current_user.role === "owner"%>
+          <li><a href=#items> ADD-ITEMS </a></li>
+          <li><a href=#users> USERS </a></li>
+        <% end %>
+        <li class="navbar-right"><%= link_to "SIGN-OUT", destroy_session_path, method: "delete" %></li>
+      </ul>
+    </nav>
+
+  </main>
+<body>

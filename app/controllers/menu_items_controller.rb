@@ -1,14 +1,14 @@
-class ItemsController < ApplicationController
+class MenuItemsController < ApplicationController
   def index
     render "index"
   end
 
   def new
-    render "items/new"
+    render "menu_items/new"
   end
 
   def create
-    Item.create!(
+    Menuitem.create!(
       name: params[:name],
       quantity: params[:quantity],
       price: params[:price],

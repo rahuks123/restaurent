@@ -1,6 +1,5 @@
 class UsersController < ApplicationController
   skip_before_action :ensure_user_logged_in
-  # has_many :orders
 
   def new
     render "users/new"

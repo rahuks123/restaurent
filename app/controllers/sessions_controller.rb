@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
     user = User.find_by(email: params[:email])
     if user && user.authenticate(params[:password])
       session[:current_user_id] = user.id
-      redirect_to items_path
+      redirect_to about_path
     else
       render plain: "noot working"
     end
