@@ -87,14 +87,14 @@ ul.navbar.responsive li a {
 
 /* ###########  THE MENU ITEMS   ############### */
 .menu {
-  color: #fff;
+  color: black;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 .row {
   display: flex;
-  color: #fff;
+  color: black;
   width: 100%;
 }
 .row::after {

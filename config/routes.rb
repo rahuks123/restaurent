@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   resources :menus
   resources :menu_items
+  resources :order_items
   resources :users
   resources :orders, only: [:new, :create]
   get "about", to: "about#about1"

@@ -3,11 +3,13 @@
 
     <nav>
       <ul class="navbar" id="dropdownclick">
-        <li><a href=<%= new_order_path%>> ORDER </a></li>
         <li><a href=/menu_items> MENU </a></li>
-        <% if @current_user.role === "owner"%>
-          <li><a href=#items> ADD-ITEMS </a></li>
-          <li><a href=#users> USERS </a></li>
+        <% if @current_user.role == "owner"%>
+          <li><a href=/menu_items/new> ADD-ITEMS </a></li>
+          <li><a href=/users> USERS </a></li>
+        <% elsif @current_user.role == "manager" %>
+          <li><a href=/order_items/new> ORDER </a></li>
+          <li><a href=/order_items> MY-ORDERS </a></li>
         <% end %>
         <li class="navbar-right"><%= link_to "SIGN-OUT", destroy_session_path, method: "delete" %></li>
       </ul>

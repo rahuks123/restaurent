@@ -8,9 +8,9 @@ class MenuItemsController < ApplicationController
   end
 
   def create
-    Menuitem.create!(
+    MenuItem.create!(
       name: params[:name],
-      quantity: params[:quantity],
+      description: params[:description],
       price: params[:price],
     )
   end

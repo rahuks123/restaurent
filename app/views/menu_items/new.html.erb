@@ -1,0 +1,25 @@
+<p class="NewUsers-title"> WELCOME OWNER</p>
+
+<section class="UsersNew">
+
+<%= form_with url: menu_items_path  do |form| %>
+  <div class="Form-section">
+    <p class="FormInput-label">DESCRIPTION</p>
+    <%= form.text_field :description, class:"Form-input" %>
+  </div>
+
+  <div class="Form-section">
+    <p class="FormInput-label">NAME OF ITEM</p>
+    <%= form.text_field :name,class:"Form-input" %>
+  </div>
+
+  <div class="Form-section">
+    <p class="FormInput-label">PRICE</p>
+    <%= form.number_field :price ,class:"Form-input"%>
+  </div>
+
+  <div>
+    <%= form.submit "ADD", class: "Form-submit" %>
+  </div>
+<% end %>
+</section>

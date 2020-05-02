@@ -1,18 +1,18 @@
 .Signing-page {
   text-align: center;
-  color: rgb(221, 228, 235);
+  color: black;
 };
 
 .Usersnew{
   display: block;
   margin-left: 500px;
-  color: rgb(221, 228, 235);
+  color: black;
 }
 }
 .NewUsers-title {
   margin-bottom: 40px;
   font-size: 30px;
-  color: rgb(221, 228, 235);
+  color: black;
 }
 
 .Form-section {
@@ -36,7 +36,19 @@
   border-radius: 8px;
 }
 .User-name{
-  color: white;
+  color: black;
   display: flex;
   justify-content: space-between;
+}
+
+/* ######  users button   ####### */
+.role-change{
+  content: " ";
+  display: block;
+}
+.upgrade-button{
+  padding: 5px;
+  margin: 0 auto;
+  font-size: 20px;
+  background-color: lightgreen;
 }

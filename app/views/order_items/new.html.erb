@@ -1,0 +1,16 @@
+<table>
+  <tr class="order-row">
+    <th>NAME OF ITEM</th>
+    <th>PRICE</th>
+  </tr>
+   <tr class="order-row">
+   <% MenuItem.all.each do |item| %>
+      <tr class="order-row">
+        <th><%= item.name %></th>
+        <th><%= item.price %></th>
+        <%= form_with url: order_items_path(menu_item_id: item.id), method: "POST" do %>
+          <th><input type="submit" value="ADD_TO_CART" class="order-col"></th>
+        <% end %>
+    <% end %>
+   </tr>
+</table>

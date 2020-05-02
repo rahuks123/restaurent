@@ -1,0 +1,12 @@
+<table>
+<tr class="order-row">
+    <th>NAME OF ITEM</th>
+    <th>PRICE</th>
+</tr>
+<tr class="order-row">
+  <% OrderItem.all.each do |item|%>
+    <th><%= item.menu_item_name %></th>
+    <th><%= item.menu_item_price %></th>
+  <% end %>
+</tr>
+</table>
