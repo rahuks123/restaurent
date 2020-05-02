@@ -1,12 +1,24 @@
 <table>
-<tr class="order-row">
-    <th>NAME OF ITEM</th>
-    <th>PRICE</th>
-</tr>
-<tr class="order-row">
+  <tr class="order-row">
+      <th>NAME OF ITEM</th>
+      <th>PRICE</th>
+      <th>QUANTITY</th>
+  </tr>
   <% OrderItem.all.each do |item|%>
-    <th><%= item.menu_item_name %></th>
-    <th><%= item.menu_item_price %></th>
+    <tr class="order-row">
+      <th><%= item.menu_item_name %></th>
+      <th><%= item.menu_item_price %></th>
+      <th><%= item.quantity %></th>
+      <%# <% if Order.find_by(item.order_id).status == "being_created"%>
+
+        <th><a  href="javascript:void(0)" >
+              <%= form_with(url: "/order_items/#{item.id}" , method: "delete") do %>
+                <input class="OrderItem-delete" type='image' src="delete.png">
+              <% end %>
+            </a>
+        </th>
+      <%# <% end %>
+
+    </tr>
   <% end %>
-</tr>
 </table>

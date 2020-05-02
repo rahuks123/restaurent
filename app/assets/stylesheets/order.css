@@ -1,6 +1,20 @@
-/* .order-row {
-  display: block;
+table {
+  border-collapse: collapse;
 }
-.order-col {
-  display: flex;
-} */
+
+table,
+th,
+td {
+  border: 5px solid black;
+  padding: 10px;
+  font-size: 24px;
+}
+
+.order-attributes {
+  padding: 10px;
+  font-size: 15px;
+}
+.cart :hover {
+  background-color: grey;
+  color: aliceblue;
+}

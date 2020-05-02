@@ -7,12 +7,23 @@ class OrderItemsController < ApplicationController
   end
 
   def create
-    item = MenuItem.find(params[:menu_item_id])
-    OrderItem.create!(
-      menu_item_id: item.id,
-      menu_item_price: item.price,
-      menu_item_name: item.name,
+    menu_item = MenuItem.find(params[:menu_item_id])
+    order = Order.create!(user_id: current_user.id, status: "being created")
+    order_item = OrderItem.create!(
+      order_id: order.id,
+      menu_item_id: menu_item.id,
+      menu_item_price: menu_item.price,
+      menu_item_name: menu_item.name,
+      quantity: params[:quantity],
     )
-    render plain: "working"
+
+    redirect_to order_items_path
+  end
+
+  def destroy
+    id = params[:id]
+    order = OrderItem.find(id)
+    order.destroy
+    redirect_to order_items_path
   end
 end
