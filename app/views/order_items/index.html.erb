@@ -4,21 +4,26 @@
       <th>PRICE</th>
       <th>QUANTITY</th>
   </tr>
+  <% cart_price = 0 %>
   <% OrderItem.all.each do |item|%>
     <tr class="order-row">
+    <% order = Order.find(item.order_id)%>
+    <% if order.status == "being created" %>
       <th><%= item.menu_item_name %></th>
       <th><%= item.menu_item_price %></th>
       <th><%= item.quantity %></th>
-      <%# <% if Order.find_by(item.order_id).status == "being_created"%>
-
+      <th><%= item.order_id %></th>
+      <%  cart_price += (item.menu_item_price * item.quantity) %>
         <th><a  href="javascript:void(0)" >
               <%= form_with(url: "/order_items/#{item.id}" , method: "delete") do %>
                 <input class="OrderItem-delete" type='image' src="delete.png">
               <% end %>
             </a>
         </th>
-      <%# <% end %>
+    <% end %>
 
     </tr>
   <% end %>
+  <p>THE TOTAL PRICE IS <%= cart_price %></p>
+
 </table>

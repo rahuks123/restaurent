@@ -8,7 +8,9 @@ class OrderItemsController < ApplicationController
 
   def create
     menu_item = MenuItem.find(params[:menu_item_id])
-    order = Order.create!(user_id: current_user.id, status: "being created")
+    order = current_user.orders.being_created ?
+      current_user.orders.being_created :
+      Order.create!(user_id: current_user.id, status: "being created")
     order_item = OrderItem.create!(
       order_id: order.id,
       menu_item_id: menu_item.id,
@@ -16,8 +18,9 @@ class OrderItemsController < ApplicationController
       menu_item_name: menu_item.name,
       quantity: params[:quantity],
     )
+  end
 
-    redirect_to order_items_path
+  def update
   end
 
   def destroy

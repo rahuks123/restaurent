@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   resources :menu_items
   resources :order_items
   resources :users
-  resources :orders, only: [:new, :create]
+  resources :orders
   get "about", to: "about#about1"
   get "/signin" => "sessions#new", as: :new_sessions
   post "/signin" => "sessions#create", as: :sessions

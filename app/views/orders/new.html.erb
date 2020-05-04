@@ -1,0 +1,20 @@
+<table>
+  <tr class="order-row">
+    <th class="order-header">USER_ID</th>
+    <th class="order-header">STATUS</th>
+    <th class="order-header">DELIVERED ON</th>
+
+  </tr>
+  <% Order.all.each do |order| %>
+    <div class="cart">
+      <tr class="order-row">
+        <td class="order-attributes"><%= order.user_id %></td>
+        <td class="order-attributes"><%= order.status %></td>
+        <td class="order-attributes"><%= order.delivered_at %></td>
+          <%= form_with url: "/orders/#{order.id}", method: "PUT" do %>
+            <td><input type="submit" value="DELIVERED" class="order-col"></td>
+          <% end %>
+      </tr>
+    </div>
+  <% end %>
+</table>

@@ -3,6 +3,6 @@ class Order < ActiveRecord::Base
   belongs_to :user
 
   def self.being_created
-    all.where("status == being_created")
+    all.where("status = ?", "being created").first
   end
 end

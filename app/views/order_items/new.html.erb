@@ -16,3 +16,12 @@
     </div>
   <% end %>
 </table>
+
+<div class="confirm">
+ <% order = @current_user.orders.being_created %>
+ <% if order %>
+  <%= form_with url: "/orders/#{order.id}", method: "PATCH" do %>
+   <input type="submit" value="CONFIRM" class="order-col">
+  <% end %>
+<% end %>
+ </div>
