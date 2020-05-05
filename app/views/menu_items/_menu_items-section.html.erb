@@ -1,0 +1,17 @@
+<section class="TodoSection">
+    <h2 class="TodoSectionTitle-text"><%= section_title %></h2>
+</section>
+
+<div class="row">
+  <h4 class="col-3">DESCRIPTION</h4>
+  <h4 class="col-6">NAME OF THE ITEM</h4>
+  <h4 class="col-3">PRICE (Rs)</h4>
+</div>
+
+<div class="row">
+  <% menuitems.all.each do |item|%>
+    <p class="col-3"><%= item.description %></p>
+    <p class="col-6"> <%= item.name %> (1)</p>
+    <p class="col-3"><%= item.price %></p>
+  <% end %>
+</div>

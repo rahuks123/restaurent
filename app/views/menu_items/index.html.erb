@@ -1,14 +1,24 @@
-<div class="row">
-    <h4 class="col-3">DESCRIPTION</h4>
-    <h4 class="col-6">NAME OF THE ITEM</h4>
-    <h4 class="col-3">PRICE (Rs)</h4>
-  </div>
+  <%= render partial: "menu_items-section", locals: {
+    section_title: "starter",
+   menuitems: MenuItem.starter,
+  } %>
 
-<div class="row">
+  <%= render partial: "menu_items-section", locals: {
+    section_title: "breakfast",
+    menuitems: MenuItem.breakfast,
+   } %>
 
-  <% MenuItem.find_each do |item|%>
-    <p class="col-3"><%= item.description %></p>
-    <p class="col-6"> <%= item.name %> (1)</p>
-    <p class="col-3"><%= item.price %></p>
-  <% end %>
-</div>
+  <%= render partial: "menu_items-section", locals: {
+    section_title: "lunch",
+    menuitems: MenuItem.lunch,
+  } %>
+
+  <%= render partial: "menu_items-section", locals: {
+    section_title: "dinner",
+    menuitems: MenuItem.dinner,
+  } %>
+
+  <%= render partial: "menu_items-section", locals: {
+    section_title: "dessert",
+    menuitems: MenuItem.dessert,
+  } %>
