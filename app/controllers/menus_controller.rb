@@ -4,9 +4,15 @@ class MenusController < ApplicationController
   end
 
   def update
+    menu = Menu.current_menu
+    if menu
+      menu.active_menu = false
+      menu.save!
+    end
     id = params[:id]
     menu = Menu.find(id)
     menu.active_menu = true
-    mepnu.save!
+    menu.save!
+    redirect_to menu_items_path
   end
 end

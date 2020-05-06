@@ -4,19 +4,22 @@
     <th class="order-header">STATUS</th>
     <th class="order-header">ACTIVE</th>
   </tr>
-  <% Menu.all.each do |item| %>
-    <div class="cart">
-      <tr class="order-row">
-        <td class="order-attributes"><%= item.name %></td>
-        <% if item.active_menu %>
-          <td class="order-attributes"> active </td>
-        <% else %>
-          <td class="order-attributes"></td>
-        <% end %>
-        <%= form_with url: "/menus/#{item.id}", method: "PUT" do %>
-          <td><input type="submit" value="Activate" class="order-col"></td>
-        <% end %>
-      </tr>
-    </div>
+  <% if @current_user.role %>
+
+    <% Menu.all.each do |item| %>
+      <div class="cart">
+        <tr class="order-row">
+          <td class="order-attributes"><%= item.name %></td>
+          <% if item.active_menu %>
+            <td class="order-attributes"> active </td>
+          <% else %>
+            <td class="order-attributes"></td>
+          <% end %>
+          <%= form_with url: "/menus/#{item.id}", method: "PUT" do %>
+            <td><input type="submit" value="Activate" class="order-col"></td>
+          <% end %>
+        </tr>
+      </div>
+    <% end %>
   <% end %>
 </table>

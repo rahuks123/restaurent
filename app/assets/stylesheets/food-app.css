@@ -103,21 +103,25 @@ ul.navbar.responsive li a {
   margin-top: 10px;
 }
 .row {
-  display: block;
-  color: black;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
   width: 100%;
+  color: black;
 }
 .row::after {
-  display: flex;
+  display: table;
   clear: both;
   content: "";
-  color: aqua;
 }
 .col-1 {
   width: 5%;
 }
 .col-3 {
   width: 25%;
+}
+.col-4 {
+  width: 33.33%;
 }
 .col-6 {
   width: 50%;

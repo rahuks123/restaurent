@@ -1,24 +1,46 @@
-  <%= render partial: "menu_items-section", locals: {
-    section_title: "starter",
-   menuitems: MenuItem.starter,
+<div class="row">
+  <% unless @current_user.role == "user" %>
+    <p class="col-4">NAME OF MENU</p>
+    <p class="col-4">STATUS</p>
+    <p class="col-4">ACTIVE</p>
+  </div>
+</div>
+
+<% Menu.all.each do |item| %>
+  <div class="row">
+      <p class="col-4"><%= item.name %></p>
+      <% if item.active_menu %>
+        <p class="col-4"> active </p>
+      <% else %>
+        <p class="col-4"> ------- </p>
+      <% end %>
+      <%= form_with url: "/menus/#{item.id}", method: "PUT" do %>
+      <p><input type="submit" value="Activate"></p>
+      <% end %>
+  </div>
+<% end %>
+<% end %>
+<%= render partial: "menu_items-section", locals: {
+  section_title: "starter",
+  menuitems: MenuItem.starter,
+} %>
+
+<%= render partial: "menu_items-section", locals: {
+  section_title: "breakfast",
+  menuitems: MenuItem.breakfast,
   } %>
 
-  <%= render partial: "menu_items-section", locals: {
-    section_title: "breakfast",
-    menuitems: MenuItem.breakfast,
-   } %>
+<%= render partial: "menu_items-section", locals: {
+  section_title: "lunch",
+  menuitems: MenuItem.lunch,
+} %>
 
-  <%= render partial: "menu_items-section", locals: {
-    section_title: "lunch",
-    menuitems: MenuItem.lunch,
-  } %>
+<%= render partial: "menu_items-section", locals: {
+  section_title: "dinner",
+  menuitems: MenuItem.dinner,
+} %>
 
-  <%= render partial: "menu_items-section", locals: {
-    section_title: "dinner",
-    menuitems: MenuItem.dinner,
-  } %>
-
-  <%= render partial: "menu_items-section", locals: {
-    section_title: "dessert",
-    menuitems: MenuItem.dessert,
-  } %>
+<%= render partial: "menu_items-section", locals: {
+  section_title: "dessert",
+  menuitems: MenuItem.dessert,
+} %>

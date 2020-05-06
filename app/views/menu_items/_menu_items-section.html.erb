@@ -9,9 +9,12 @@
 </div>
 
 <div class="row">
+  <% menu = Menu.current_menu%>
   <% menuitems.all.each do |item|%>
-    <p class="col-3"><%= item.description %></p>
-    <p class="col-6"> <%= item.name %> (1)</p>
-    <p class="col-3"><%= item.price %></p>
+    <% if menu.id == item.menu_id %>
+      <p class="col-3"><%= item.description %></p>
+      <p class="col-6"> <%= item.name %></p>
+      <p class="col-3"><%= item.price %></p>
+    <% end %>
   <% end %>
 </div>
