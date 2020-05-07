@@ -103,10 +103,10 @@ ul.navbar.responsive li a {
   margin-top: 10px;
 }
 .row {
-  display: flex;
+  display: block;
   flex-wrap: wrap;
   align-items: center;
-  width: 100%;
+  /* width: 100%; */
   color: black;
 }
 .row::after {

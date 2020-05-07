@@ -14,7 +14,7 @@
       <% else %>
         <p class="col-4"> ------- </p>
       <% end %>
-      <%= form_with url: "/menus/#{item.id}", method: "PUT" do %>
+      <%= form_with url: "/menus/#{item.id}",local:true, method: "PUT" do %>
         <p><input type="submit" value="Activate"></p>
       <% end %>
   </div>
