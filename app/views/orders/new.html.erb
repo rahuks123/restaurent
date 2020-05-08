@@ -11,7 +11,7 @@
         <td class="order-attributes"><%= order.user_id %></td>
         <td class="order-attributes"><%= order.status %></td>
         <td class="order-attributes"><%= order.delivered_at %></td>
-          <%= form_with url: "/orders/#{order.id}", method: "PUT" do %>
+          <%= form_with url: "/orders/#{order.id}", local:true, method: "PUT" do %>
             <td><input type="submit" value="DELIVERED" class="order-col"></td>
           <% end %>
       </tr>

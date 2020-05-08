@@ -3,6 +3,13 @@ class MenusController < ApplicationController
     render "menus/new"
   end
 
+  def create
+    Menu.create!(
+      name: params[:name],
+      active_menu: false,
+    )
+  end
+
   def update
     menu = Menu.current_menu
     if menu

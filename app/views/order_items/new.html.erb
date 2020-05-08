@@ -8,7 +8,7 @@
       <tr class="order-row">
         <td class="order-attributes"><%= item.name %></td>
         <td class="order-attributes"><%= item.price %></td>
-          <%= form_with url: order_items_path(menu_item_id: item.id), method: "POST" do %>
+          <%= form_with url: order_items_path(menu_item_id: item.id), method: "POST", local: true do |f| %>
            <td class="order-attributes"><%= number_field_tag 'quantity' %></td>
             <td><input type="submit" value="ADD_TO_CART" class="order-col"></td>
           <% end %>
@@ -16,12 +16,3 @@
     </div>
   <% end %>
 </table>
-
-<div class="confirm">
- <% order = @current_user.orders.being_created %>
- <% if order %>
-  <%= form_with url: "/orders/#{order.id}", method: "PATCH" do %>
-   <input type="submit" value="CONFIRM" class="order-col">
-  <% end %>
-<% end %>
- </div>

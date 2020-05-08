@@ -4,7 +4,7 @@
 
 <div class="row">
   <h4 class="col-3">DESCRIPTION</h4>
-  <h4 class="col-6">NAME OF THE ITEM</h4>
+  <h4 class="col-3">NAME OF THE ITEM</h4>
   <h4 class="col-3">PRICE (Rs)</h4>
 </div>
 
@@ -13,8 +13,17 @@
   <% menuitems.all.each do |item|%>
     <% if menu.id == item.menu_id %>
       <p class="col-3"><%= item.description %></p>
-      <p class="col-6"> <%= item.name %></p>
+      <p class="col-3"> <%= item.name %></p>
       <p class="col-3"><%= item.price %></p>
+      <% if @current_user.role == "owner"%>
+        <div>
+        <a  href="javascript:void(0)" >
+              <%= form_with(url: "/menu_items/#{item.id}" , method: "delete") do %>
+                <input class="OrderItem-delete" type='image' src="delete.png">
+              <% end %>
+        </a>
+        </div>
+      <% end %>
     <% end %>
   <% end %>
 </div>

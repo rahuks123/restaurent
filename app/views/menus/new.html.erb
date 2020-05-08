@@ -1,25 +1,16 @@
-<table>
-  <tr class="order-row">
-    <th class="order-header">NAME OF MENU</th>
-    <th class="order-header">STATUS</th>
-    <th class="order-header">ACTIVE</th>
-  </tr>
-  <% if @current_user.role %>
+<p class="NewUsers-title"> WELCOME OWNER</p>
 
-    <% Menu.all.each do |item| %>
-      <div class="cart">
-        <tr class="order-row">
-          <td class="order-attributes"><%= item.name %></td>
-          <% if item.active_menu %>
-            <td class="order-attributes"> active </td>
-          <% else %>
-            <td class="order-attributes"></td>
-          <% end %>
-          <%= form_with url: "/menus/#{item.id}", method: "PUT" do %>
-            <td><input type="submit" value="Activate" class="order-col"></td>
-          <% end %>
-        </tr>
-      </div>
-    <% end %>
-  <% end %>
-</table>
+<section class="UsersNew">
+
+<%= form_with url: menus_path  do |form| %>
+
+  <div class="Form-section">
+    <p class="FormInput-label">NAME OF ITEM</p>
+    <%= form.text_field :name,class:"Form-input" %>
+  </div>
+
+  <div>
+    <%= form.submit "ADD", class: "Form-submit" %>
+  </div>
+<% end %>
+</section>
