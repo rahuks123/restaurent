@@ -11,9 +11,12 @@
 
   <body>
   <% if @current_user %>
-    <p class="User-name">
-     Welcome <%= @current_user.name %>
-    </p>
+    <div class="headers">
+      <p class="User-name">
+      Welcome <%= @current_user.name %>
+      </p>
+      <%= button_to "BACK", about_path, method: "get" ,class: "backbutton"%>
+    </div>
   <% end %>
     <%= yield %>
   </body>

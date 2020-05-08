@@ -1,5 +1,6 @@
+
 <div class="row">
-  <% unless @current_user.role == "user" %>
+  <% if @current_user.role == "owner" %>
     <p class="col-4">NAME OF MENU</p>
     <p class="col-4">STATUS</p>
     <p class="col-4">ACTIVE</p>

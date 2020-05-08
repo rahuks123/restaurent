@@ -1,0 +1,13 @@
+.backbutton {
+  background-color: rgb(115, 207, 115);
+  color: #fff;
+  font-size: 20px;
+  border-radius: 7px;
+  border: 0;
+}
+.headers {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 20px;
+}
