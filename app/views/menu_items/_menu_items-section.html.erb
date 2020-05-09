@@ -1,30 +1,29 @@
-<section class="TodoSection">
-    <h2 class="TodoSectionTitle-text"><%= section_title %></h2>
-</section>
 
-<div class="row">
-  <h4 class="col-3">DESCRIPTION</h4>
-  <h4 class="col-3">NAME OF THE ITEM</h4>
-  <h4 class="col-3">PRICE (Rs)</h4>
-</div>
+<section class="menu">
 
-<div class="row">
+  <section class="TodoSection">
+      <h2 class="TodoSectionTitle-text"><%= section_title %></h2>
+  </section>
+
   <% menu = Menu.current_menu%>
   <% menuitems.all.each do |item|%>
     <% if menu.id == item.menu_id %>
       <div class="MenuDisplay">
-        <p class="col-3"><%= item.description %></p>
-        <p class="col-3"> <%= item.name %></p>
-        <p class="col-3"><%= item.price %></p>
-
-        <% if @current_user.role == "owner"%>
-          <a  href="javascript:void(0)" >
+        <div class="heading">
+          <p class="item-name"> <%= item.name %></p>
+          <p class="itemm-price"><%= item.price %></p>
+          <% if @current_user.role == "owner"%>
+            <a  href="javascript:void(0)" >
                 <%= form_with(url: "/menu_items/#{item.id}" , method: "delete") do %>
                   <input class="OrderItem-delete" type='image' src="delete.png">
                 <% end %>
-          </a>
-        <% end %>
+            </a>
+          <% end %>
+        </div>
+        <p style="width:310px"class="description"><i><%= item.description %></i></p>
+
       </div>
     <% end %>
   <% end %>
-</div>
+</section>
+<%# </div> %>

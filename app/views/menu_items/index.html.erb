@@ -4,9 +4,10 @@
     <p class="col-4">NAME OF MENU</p>
     <p class="col-4">STATUS</p>
     <p class="col-4">ACTIVE</p>
-  </div>
+  <% end %>
 </div>
 
+<section>
 <% Menu.all.each do |item| %>
   <div class="row">
       <p class="col-4"><%= item.name %></p>
@@ -20,28 +21,33 @@
       <% end %>
   </div>
 <% end %>
-<% end %>
-<%= render partial: "menu_items-section", locals: {
-  section_title: "starter",
-  menuitems: MenuItem.starter,
-} %>
+</section>
 
-<%= render partial: "menu_items-section", locals: {
-  section_title: "breakfast",
-  menuitems: MenuItem.breakfast,
+  <h1 class="menu-tag">MENU</h1>
+
+<section class="menu-rendering">
+  <%= render partial: "menu_items-section", locals: {
+    section_title: "starter",
+    menuitems: MenuItem.starter,
   } %>
 
-<%= render partial: "menu_items-section", locals: {
-  section_title: "lunch",
-  menuitems: MenuItem.lunch,
-} %>
+  <%= render partial: "menu_items-section", locals: {
+    section_title: "breakfast",
+    menuitems: MenuItem.breakfast,
+    } %>
 
-<%= render partial: "menu_items-section", locals: {
-  section_title: "dinner",
-  menuitems: MenuItem.dinner,
-} %>
+  <%= render partial: "menu_items-section", locals: {
+    section_title: "lunch",
+    menuitems: MenuItem.lunch,
+  } %>
 
-<%= render partial: "menu_items-section", locals: {
-  section_title: "dessert",
-  menuitems: MenuItem.dessert,
-} %>
+  <%= render partial: "menu_items-section", locals: {
+    section_title: "dinner",
+    menuitems: MenuItem.dinner,
+  } %>
+
+  <%= render partial: "menu_items-section", locals: {
+    section_title: "dessert",
+    menuitems: MenuItem.dessert,
+  } %>
+</section>

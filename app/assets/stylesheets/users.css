@@ -1,31 +1,28 @@
+/* #####     SIGN UP PAGE    ###### */
+
 .Signing-page {
   text-align: center;
-  color: black;
-};
+}
 
-.Usersnew{
-  display: block;
-  margin-left: 500px;
-  color: black;
-}
-}
 .NewUsers-title {
   margin-bottom: 40px;
-  font-size: 30px;
-  color: black;
+  font-size: 35px;
+  color: darkslategrey;
+}
+
+.FormInput-label {
+  display: block;
+  font-size: 20px;
+  margin-bottom: 8px;
 }
 
 .Form-section {
   margin-bottom: 30px;
 }
+
 .Form-input {
   font-size: 20px;
   padding: 8px;
-}
-.FormInput-label {
-  display: block;
-  color: goldenrod;
-  margin-bottom: 8px;
 }
 .Form-submit {
   font-size: 20px;
@@ -35,20 +32,26 @@
   border: 0;
   border-radius: 8px;
 }
-.User-name{
-  color: black;
-  display: flex;
-  justify-content: space-between;
-}
 
 /* ######  users button   ####### */
-.role-change{
+
+.role-change {
   content: " ";
   display: block;
 }
-.upgrade-button{
+.upgrade-button {
   padding: 5px;
   margin: 0 auto;
   font-size: 20px;
   background-color: lightgreen;
 }
+
+/* #####  header  ###### */
+
+.User-name {
+  color: black;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* ####  unwanted   #### */

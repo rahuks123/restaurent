@@ -1,13 +1,9 @@
-.home-page-main {
+/* ######   home page   ### */
+main.home-page-main {
   display: flex;
-  flex-wrap: wrap;
-  overflow: hidden;
+  background-color: rgb(241, 241, 241);
 }
-.Home-authenticate {
-  content: " ";
-  font-size: 20px;
-  margin-left: 25%;
-}
+
 .header {
   justify-content: center;
   display: flex;
@@ -19,15 +15,19 @@
 .Page-title {
   font-size: 40px;
   font-weight: 600;
+  margin-left: 5px;
   color: orangered;
 }
-
 .moto {
   margin-right: 8px;
   margin-bottom: 30px;
   display: block;
 }
-/*##############  picture  ########3333  */
+.Home-authenticate {
+  font-size: 20px;
+  margin-left: 25%;
+}
+/*##############  picture  ######## */
 .side-pic {
   width: 50%;
   height: 100%;
@@ -36,7 +36,9 @@
   image-rendering: pixelated;
   border: black solid 5px;
 }
+.homeimage {
+  width: 100%;
+}
 .info {
   width: 50%;
-  background-color: rgb(241, 241, 241);
 }
