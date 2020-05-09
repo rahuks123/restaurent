@@ -5,9 +5,9 @@
       <ul class="navbar" id="dropdownclick">
         <% if @current_user.role == "owner"%>
           <li><a href=/menus/new> ADD-MENU </a></li>
-          <li><a href=/menu_items/new> ADD-ITEMS </a></li>
           <li><a href=/menu_items> MENU </a></li>
           <li><a href=/users> USERS </a></li>
+          <li><a href=/orders/new> ORDER </a></li>
         <% elsif @current_user.role == ("manager" || "owner") %>
           <li><a href=/orders/new> ORDER </a></li>
         <% elsif @current_user.role == "user"%>

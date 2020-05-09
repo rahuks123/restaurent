@@ -11,3 +11,19 @@
   align-items: center;
   font-size: 20px;
 }
+
+.adding {
+  display: flex;
+  justify-content: space-between;
+}
+.MenuNew {
+  width: 50%;
+  text-align: center;
+}
+
+.ItemNew {
+  width: 50%;
+  text-align: center;
+  height: 550px;
+  border-left: 6px solid black;
+}

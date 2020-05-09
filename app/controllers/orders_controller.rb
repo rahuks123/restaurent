@@ -11,7 +11,7 @@ class OrdersController < ApplicationController
     order = Order.find(id)
     if order.status == "being created"
       order.status = "confirmed"
-      order.delivered_at = Date.today.to_s(:long)
+      order.date = Date.today.to_s(:long)
     elsif order.status == "confirmed"
       order.status = "delivered"
       order.delivered_at = Date.today.to_s(:long)

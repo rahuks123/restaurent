@@ -1,6 +1,6 @@
-<p class="NewUsers-title"> WELCOME OWNER</p>
+<div class="adding">
 
-<section class="UsersNew">
+<section class="MenuNew">
 
 <%= form_with url: menus_path  do |form| %>
 
@@ -14,3 +14,34 @@
   </div>
 <% end %>
 </section>
+
+<section class="ItemNew">
+
+<%= form_with url: menu_items_path  do |form| %>
+  <div class="Form-section">
+    <p class="FormInput-label">DESCRIPTION</p>
+    <%= form.text_field :description, class:"Form-input" %>
+  </div>
+
+  <div class="Form-section">
+    <p class="FormInput-label">NAME OF ITEM</p>
+    <%= form.text_field :name,class:"Form-input" %>
+  </div>
+
+  <div class="Form-section">
+    <p class="FormInput-label">PRICE</p>
+    <%= form.number_field :price ,class:"Form-input"%>
+  </div>
+
+  <div class="Form-section">
+    <p class="FormInput-label">CATEGORY</p>
+    <%= form.text_field :category ,class:"Form-input"%>
+  </div>
+
+  <div>
+    <%= form.submit "ADD", class: "Form-submit" %>
+  </div>
+<% end %>
+</section>
+
+</div>

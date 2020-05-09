@@ -12,18 +12,19 @@
   <% menu = Menu.current_menu%>
   <% menuitems.all.each do |item|%>
     <% if menu.id == item.menu_id %>
-      <p class="col-3"><%= item.description %></p>
-      <p class="col-3"> <%= item.name %></p>
-      <p class="col-3"><%= item.price %></p>
-      <% if @current_user.role == "owner"%>
-        <div>
-        <a  href="javascript:void(0)" >
-              <%= form_with(url: "/menu_items/#{item.id}" , method: "delete") do %>
-                <input class="OrderItem-delete" type='image' src="delete.png">
-              <% end %>
-        </a>
-        </div>
-      <% end %>
+      <div class="MenuDisplay">
+        <p class="col-3"><%= item.description %></p>
+        <p class="col-3"> <%= item.name %></p>
+        <p class="col-3"><%= item.price %></p>
+
+        <% if @current_user.role == "owner"%>
+          <a  href="javascript:void(0)" >
+                <%= form_with(url: "/menu_items/#{item.id}" , method: "delete") do %>
+                  <input class="OrderItem-delete" type='image' src="delete.png">
+                <% end %>
+          </a>
+        <% end %>
+      </div>
     <% end %>
   <% end %>
 </div>
