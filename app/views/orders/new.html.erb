@@ -9,7 +9,8 @@
     <div class="cart">
       <tr class="order-row">
       <% if order.status == "confirmed"%>
-        <td class="order-attributes"><%= order.user_id %></td>
+      <% user= User.find(order.user_id)%>
+        <td class="order-attributes"><%= user.name %></td>
         <td class="order-attributes"><%= order.status %></td>
         <td class="order-attributes"><%= order.delivered_at %></td>
           <%= form_with url: "/orders/#{order.id}", local:true, method: "PUT" do %>

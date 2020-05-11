@@ -1,10 +1,23 @@
 /* ####  DIPLAYING MENU  ###### */
+img {
+  display: block;
+}
 .menu-rendering {
   margin-top: 50px;
 }
 .menu {
   padding-left: 20px;
   margin-bottom: 50px;
+}
+.MenuDisplay {
+  position: relative;
+  display: block;
+}
+.category-wise-menu {
+  display: flex;
+  flex-wrap: wrap;
+  content: " ";
+  padding-left: 15px;
 }
 .TodoSectionTitle-text {
   text-transform: uppercase;
@@ -15,8 +28,8 @@
 .heading {
   display: flex;
   align-items: center;
-  width: 50%;
-  justify-content: space-between;
+  width: 60%;
+  /* justify-content: space-between; */
 }
 .item-name {
   font-size: 20px;
@@ -25,8 +38,8 @@
   font-weight: 400;
   margin-bottom: 5px;
 }
-.itemm-price {
-  padding-left: 100px;
+.item-price {
+  padding-left: 50px;
 }
 .description {
   padding-left: 10px;
@@ -35,9 +48,7 @@
   margin-bottom: 15px;
 }
 .menu-tag {
-  margin-top: 50px;
-  margin-bottom: 50px;
-  padding-left: 25%;
+  text-align: center;
 }
 .backbutton {
   background-color: rgb(115, 207, 115);
@@ -47,7 +58,8 @@
   border: 0;
 }
 .headers {
-  display: flex;
+  display: inline-block;
+  text-align: center;
   justify-content: space-between;
   align-items: center;
   font-size: 20px;

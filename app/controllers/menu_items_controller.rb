@@ -15,6 +15,7 @@ class MenuItemsController < ApplicationController
       price: params[:price],
       menu_id: menu.id,
       description: params[:description],
+      image: params[:image],
     )
   end
 

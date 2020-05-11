@@ -1,5 +1,6 @@
-class MenuItem < ActiveRecord::Base
+class MenuItem < ApplicationRecord
   belongs_to :menu
+  has_one_attached :image
 
   def self.starter
     all.where("category = ?", "starters")

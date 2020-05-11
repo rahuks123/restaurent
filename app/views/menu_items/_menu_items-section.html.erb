@@ -5,25 +5,27 @@
       <h2 class="TodoSectionTitle-text"><%= section_title %></h2>
   </section>
 
-  <% menu = Menu.current_menu%>
-  <% menuitems.all.each do |item|%>
-    <% if menu.id == item.menu_id %>
-      <div class="MenuDisplay">
-        <div class="heading">
-          <p class="item-name"> <%= item.name %></p>
-          <p class="itemm-price"><%= item.price %></p>
-          <% if @current_user.role == "owner"%>
-            <a  href="javascript:void(0)" >
-                <%= form_with(url: "/menu_items/#{item.id}" , method: "delete") do %>
-                  <input class="OrderItem-delete" type='image' src="delete.png">
-                <% end %>
-            </a>
-          <% end %>
-        </div>
-        <p style="width:310px"class="description"><i><%= item.description %></i></p>
+  <section class="category-wise-menu">
+    <% menu = Menu.current_menu%>
+    <% menuitems.all.each do |item|%>
+      <% if menu.id == item.menu_id %>
+        <div class="MenuDisplay">
+            <%= image_tag(item.image, height:200, width:200) if item.image.attached? %>
+            <div class="heading">
+              <p class="item-name"> <%= item.name %></p>
+              <p class="item-price"><%= item.price %></p>
+            </div>
+            <% if @current_user.role == "owner"%>
+              <a  href="javascript:void(0)" >
+                  <%= form_with(url: "/menu_items/#{item.id}" , method: "delete") do %>
+                    <input class="OrderItem-delete" type='image' src="delete.png">
+                  <% end %>
+              </a>
+            <% end %>
+          <p style="width:310px"class="description"><i><%= item.description %></i></p>
 
-      </div>
+        </div>
+      <% end %>
     <% end %>
-  <% end %>
+  </section>
 </section>
-<%# </div> %>
