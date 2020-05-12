@@ -4,13 +4,6 @@ header,
 footer {
   display: block;
 }
-body {
-  background-image: url(wallpaper2.jpeg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  line-height: 1;
-  margin: 0;
-}
 .container {
   width: 100%;
   margin: auto;
@@ -91,9 +84,7 @@ ul.navbar.responsive li a {
   color: black;
 }
 .menu {
-  /* color: #fff; */
-  /* display: flex;
-  justify-content: center; */
+  justify-content: center;
   display: block;
   margin: 10px auto;
 }
@@ -106,7 +97,6 @@ ul.navbar.responsive li a {
   display: block;
   flex-wrap: wrap;
   align-items: center;
-  /* width: 100%; */
   color: black;
 }
 .row::after {

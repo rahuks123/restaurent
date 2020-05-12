@@ -18,4 +18,9 @@ class OrdersController < ApplicationController
     end
     order.save!
   end
+
+  def index
+    @from_date = params[:from_date]
+    @to_date = params[:to_date]
+  end
 end

@@ -1,0 +1,5 @@
+<p> the dates are </p>
+<% report = Order.report(@from_date, @to_date) %>
+<% report.all.each do |record|%>
+  <p><%= record.id %></p>
+<% end %>

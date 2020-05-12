@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :order_items
   resources :users
   resources :orders
+  get "reports", to: "reports#index"
   get "about", to: "about#about1"
   get "/signin" => "sessions#new", as: :new_sessions
   post "/signin" => "sessions#create", as: :sessions
