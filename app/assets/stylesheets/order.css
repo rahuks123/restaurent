@@ -18,3 +18,25 @@ td {
   background-color: grey;
   color: aliceblue;
 }
+
+/* #####  MY-ORDER  ### */
+.myorder-items {
+  justify-content: space-between;
+  display: flex;
+  text-align: center;
+}
+.myorder-box {
+  border: black solid 2px;
+  border-radius: 7px;
+}
+.myorder-item-value {
+  padding-right: 15px;
+}
+.myorder-container {
+  display: block;
+  width: 75%;
+  margin: 0 auto;
+}
+.myorder-total {
+  text-align: center;
+}

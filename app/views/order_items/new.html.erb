@@ -1,18 +1,20 @@
-<table>
-  <tr class="order-row">
-    <th class="order-header">NAME OF ITEM</th>
-    <th class="order-header">PRICE</th>
-  </tr>
-  <% MenuItem.all.each do |item| %>
-    <div class="cart">
-      <tr class="order-row">
-        <td class="order-attributes"><%= item.name %></td>
-        <td class="order-attributes"><%= item.price %></td>
-          <%= form_with  url: order_items_path(menu_item_id: item.id) , local: true, method: "POST"  do  %>
-           <td class="order-attributes"><%= number_field_tag 'quantity' %></td>
-            <td><input type="submit" value="ADD_TO_CART" class="order-col"></td>
-          <% end %>
-      </tr>
-    </div>
+<div class="myorder-container">
+<% @current_user.orders.all.each do |order| %>
+
+<ul class="myorder-box">
+
+  <p class="myorder-total"> STATUS: <%= order.status %></p>
+
+  <% OrderItem.all.each do |order_item|%>
+    <% if order_item.order_id == order.id%>
+      <li class="myorder-items">
+          <p class="myorder-item-value"><%= order_item.menu_item_name %> x <%= order_item.quantity %></p>
+          <p class="myorder-item-value"><%= order_item.menu_item_price %></p>
+      </li>
+    <% end %>
   <% end %>
-</table>
+
+  <p class="myorder-total"> TOTAL:  <%= order.total %></p>
+</ul>
+<% end %>
+</div>

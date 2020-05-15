@@ -14,8 +14,8 @@
           <li><a href=/orders/new> ORDER </a></li>
         <% elsif @current_user.role == "user"%>
           <li><a href=/menu_items> MENU </a></li>
-          <li><a href=/order_items/new> ORDER </a></li>
           <li><a href=/order_items> CART </a></li>
+          <li><a href=/order_items/new> MY-ORDERS </a></li>
         <% end %>
         <li class="navbar-right"><%= link_to "SIGN-OUT", destroy_session_path, method: "delete" %></li>
       </ul>
