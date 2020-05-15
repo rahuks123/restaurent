@@ -7,6 +7,6 @@ class Order < ApplicationRecord
   end
 
   def self.report(from_date, to_date)
-    all.where("delivered_at = ? && date = ?", from_date, to_date)
+    all.where("date >= ? and date <= ? ", from_date, to_date)
   end
 end

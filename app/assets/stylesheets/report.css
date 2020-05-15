@@ -1,0 +1,24 @@
+.container {
+  display: block;
+  margin: auto;
+}
+.heading1 {
+  font-size: 25px;
+}
+.value {
+  padding-left: 20px;
+  font-size: 20px;
+}
+.heading-value {
+  /* text-align: center; */
+  display: flex;
+  align-items: center;
+}
+.orderitems {
+  display: block;
+  width: 100%;
+}
+
+main.container {
+  padding-left: 150px;
+}

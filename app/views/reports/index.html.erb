@@ -1,5 +1,5 @@
 <h2> ENTER THE RESPECTIVE DATES </h2>
-   <%= form_with(url: "/orders" , method: "get" , class: "AddTodo") do %>
+   <%= form_with(url: "/orders" , method: "get" , class: "AddTodo", local: true) do %>
 
         <%= date_field_tag 'from_date', nil, class:"AddTodo-date" %>
         <%= date_field_tag 'to_date', nil, class:"AddTodo-date" %>

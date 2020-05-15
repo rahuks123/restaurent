@@ -12,6 +12,7 @@
       <% user= User.find(order.user_id)%>
         <td class="order-attributes"><%= user.name %></td>
         <td class="order-attributes"><%= order.status %></td>
+        <td class="order-attributes"><%= order.date %></td>
         <td class="order-attributes"><%= order.delivered_at %></td>
           <%= form_with url: "/orders/#{order.id}", local:true, method: "PUT" do %>
             <td><input type="submit" value="DELIVERED" class="order-col"></td>

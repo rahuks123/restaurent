@@ -79,3 +79,9 @@ img {
   height: 550px;
   border-left: 6px solid black;
 }
+.special-features {
+  display: flex;
+}
+.quantity {
+  max-width: 70px;
+}

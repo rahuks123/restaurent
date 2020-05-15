@@ -107,6 +107,9 @@ ul.navbar.responsive li a {
 .col-1 {
   width: 5%;
 }
+.col-2 {
+  width: 16.66%;
+}
 .col-3 {
   width: 25%;
 }
