@@ -1,35 +1,33 @@
-<table>
-  <tr class="order-row">
-      <th>NAME OF ITEM</th>
-      <th>PRICE</th>
-      <th>QUANTITY</th>
-  </tr>
+<p class="myorder-total"> YOUR CART </P>
 
-  <% cart_price = 0%>
+<ul class="myorder-box">
+<% cart_price = 0%>
   <% OrderItem.all.each do |item|%>
-    <tr class="order-row">
-    <% order = Order.find(item.order_id)%>
-    <% if order.status == "being created" %>
-      <p>total is<%= order.total %></p>
-      <th><%= item.menu_item_name %></th>
-      <th><%= item.menu_item_price %></th>
-      <th><%= item.quantity %></th>
-      <th><%= item.order_id %></th>
-      <% cart_price += (item.menu_item_price * item.quantity) %>
-      <% order.total = cart_price %>
-      <% order.save! %>
-        <th><a  href="javascript:void(0)" >
-              <%= form_with(url: "/order_items/#{item.id}" , method: "delete") do %>
-                <input class="OrderItem-delete" type='image' src="delete.png">
-              <% end %>
-            </a>
-        </th>
+    <% order_item = Order.find(item.order_id)%>
+    <% if order_item.status == "being created" %>
+      <li class="myorder-items">
+          <p class="myorder-item-value"><%= item.menu_item_name %> x <%= item.quantity %></p>
+          <p class="myorder-item-value"><%= item.menu_item_price %> rs</p>
+          <% cart_price += (item.menu_item_price * item.quantity) %>
+          <% order_item.total = cart_price %>
+          <% order_item.save! %>
+          <a  href="javascript:void(0)" >
+            <%= form_with(url: "/order_items/#{item.id}" , method: "delete") do %>
+              <input class="OrderItem-delete" type='image' src="delete.png">
+            <% end %>
+          </a>
+      </li>
     <% end %>
-    </tr>
   <% end %>
-</table>
+</ul>
 
-  <p>THE TOTAL PRICE IS <%= cart_price %></p>
+<% if cart_price == 0 %>
+  <p>the cart is empty</p>
+<% else%>
+<br>
+<br>
+  <P> TOTAL :  <%= cart_price %></p>
+<%  end %>
 
 <div class="confirm">
  <% order = @current_user.orders.being_created %>
