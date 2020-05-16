@@ -40,3 +40,12 @@ td {
 .myorder-total {
   text-align: center;
 }
+
+/* ######  CART     #### */
+.cart-confirm-button {
+  float: right;
+  padding-right: 20px;
+}
+.cart-message {
+  text-align: center;
+}

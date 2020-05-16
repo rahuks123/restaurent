@@ -1,11 +1,11 @@
 <div class="myorder-container">
-<% @current_user.orders.all.each do |order| %>
+<% @current_user.orders.order(date: :desc).all.each do |order| %>
   <% if order.status == "confirmed" || order.status == "delivered"%>
   <ul class="myorder-box">
 
     <p class="myorder-total"> STATUS: <%= order.status %></p>
 
-    <% OrderItem.all.each do |order_item|%>
+    <% OrderItem.all.each do |order_item| %>
       <% if order_item.order_id == order.id%>
         <li class="myorder-items">
             <p class="myorder-item-value"><%= order_item.menu_item_name %> x <%= order_item.quantity %></p>
@@ -15,6 +15,8 @@
     <% end %>
 
     <p class="myorder-total"> TOTAL:  <%= order.total %></p>
+    <p class="myorder-total"> DATE OF ORDER <%= order.date %></p>
+
   </ul>
   <% end %>
 <% end %>

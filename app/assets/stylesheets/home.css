@@ -42,3 +42,7 @@ main.home-page-main {
 .info {
   width: 50%;
 }
+p.User-name {
+  padding: 0 35px;
+  text-transform: capitalize;
+}

@@ -22,7 +22,7 @@
 </ul>
 
 <% if cart_price == 0 %>
-  <p>the cart is empty</p>
+  <p class="cart-message">IS EMPTY</p>
 <% else%>
 <br>
 <br>
@@ -33,7 +33,7 @@
  <% order = @current_user.orders.being_created %>
  <% if order %>
   <%= form_with url: "/orders/#{order.id}", local:true, method: "PATCH" do %>
-   <input type="submit" value="CONFIRM" class="order-col">
+   <input type="submit" value="CONFIRM" class="cart-confirm-button">
   <% end %>
 <% end %>
  </div>
