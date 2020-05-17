@@ -7,6 +7,7 @@ class OrderItemsController < ApplicationController
   end
 
   def create
+    flash[:notice] = "Item Added to Cart"
     menu_item = MenuItem.find(params[:menu_item_id])
     order = current_user.orders.being_created ?
       current_user.orders.being_created :

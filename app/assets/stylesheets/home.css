@@ -46,3 +46,39 @@ p.User-name {
   padding: 0 35px;
   text-transform: capitalize;
 }
+.flash-error {
+  color: darkred;
+  margin-bottom: 20px;
+  font-size: 18px;
+  animation: fadeOut 6s;
+  background-color: rgb(194, 73, 73);
+  color: rgb(207, 212, 218);
+}
+.flash-notice {
+  color: green;
+  margin-bottom: 20px;
+  font-size: 18px;
+  animation: fadeOut 6s;
+  color: rgb(207, 212, 218);
+  background-color: rgb(88, 167, 88);
+}
+.flash-message {
+  width: 50%;
+  text-align: center;
+  display: block;
+  margin: auto;
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+users-back-buttom {
+  list-style: none;
+}
