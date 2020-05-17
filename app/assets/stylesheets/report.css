@@ -10,7 +10,6 @@
   font-size: 20px;
 }
 .heading-value {
-  /* text-align: center; */
   display: flex;
   align-items: center;
 }
@@ -21,4 +20,24 @@
 
 main.container {
   padding-left: 150px;
+}
+.report-heading {
+  text-align: center;
+  margin-top: 30px;
+}
+.date-container {
+  text-align: center;
+  width: 50%;
+  margin: 30px auto;
+  display: flex;
+  justify-content: space-between;
+}
+.search-container {
+  width: 100%;
+  display: block;
+  text-align: center;
+  margin: 35px auto;
+}
+.search-button {
+  text-align: center;
 }

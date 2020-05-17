@@ -8,6 +8,11 @@ class UsersController < ApplicationController
   def index
   end
 
+  def show
+    search_id = params[:search_id]
+    @user = User.find(search_id)
+  end
+
   def update
     id = params[:id]
     user = User.find(id)

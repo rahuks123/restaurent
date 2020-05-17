@@ -1,7 +1,11 @@
 class OrdersController < ApplicationController
   def index
-    @report = Order.report(params[:from_date], params[:to_date])
-    render "orders/index"
+    if params[:search_id]
+      @report = Order.where("user_id = ?", params[:search_id])
+    else
+      @report = Order.report(params[:from_date], params[:to_date])
+      render "orders/index"
+    end
   end
 
   def new
@@ -9,9 +13,6 @@ class OrdersController < ApplicationController
   end
 
   def create
-  end
-
-  def show
   end
 
   def update

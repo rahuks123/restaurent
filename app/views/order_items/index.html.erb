@@ -27,8 +27,6 @@
 <br>
 <br>
   <P> TOTAL :  <%= cart_price %></p>
-<%  end %>
-
 <div class="confirm">
  <% order = @current_user.orders.being_created %>
  <% if order %>
@@ -37,3 +35,4 @@
   <% end %>
 <% end %>
  </div>
+<%  end %>

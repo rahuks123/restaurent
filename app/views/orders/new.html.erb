@@ -1,16 +1,22 @@
-<table>
+<table class="order-table">
   <tr class="order-row">
-    <th class="order-header">USER_ID</th>
+    <th class="order-header">USER_NAME</th>
     <th class="order-header">STATUS</th>
+    <th class="order-header">ORDERED-ON</th>
     <th class="order-header">DELIVERED ON</th>
+    <th class="order-header">UPGRADE</th>
 
   </tr>
-  <% Order.all.each do |order| %>
+  <% Order.order(id: :desc).all.each do |order| %>
     <div class="cart">
       <tr class="order-row">
       <% if order.status == "confirmed"%>
       <% user= User.find(order.user_id)%>
+      <% if user.role == "owner"|| user.role == "manager"%>
+        <td class="order-attributes">walk-in</td>
+      <% else %>
         <td class="order-attributes"><%= user.name %></td>
+      <% end %>
         <td class="order-attributes"><%= order.status %></td>
         <td class="order-attributes"><%= order.date %></td>
         <td class="order-attributes"><%= order.delivered_at %></td>

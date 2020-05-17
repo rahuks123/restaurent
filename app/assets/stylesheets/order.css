@@ -9,7 +9,11 @@ td {
   padding: 10px;
   font-size: 24px;
 }
-
+table.order-table {
+  text-align: center;
+  margin-left: 150px;
+  margin-top: 20px;
+}
 .order-attributes {
   padding: 10px;
   font-size: 15px;
@@ -39,6 +43,10 @@ td {
 }
 .myorder-total {
   text-align: center;
+}
+.myorder-message {
+  text-align: center;
+  margin: 50px;
 }
 
 /* ######  CART     #### */

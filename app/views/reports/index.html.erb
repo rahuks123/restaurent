@@ -1,8 +1,26 @@
-<h2> ENTER THE RESPECTIVE DATES </h2>
-   <%= form_with(url: "/orders" , method: "get" , class: "AddTodo", local: true) do %>
+<h2 class="report-heading"> ENTER THE RESPECTIVE DATES </h2>
+<%= form_with(url: "/orders" , method: "get" , class: "AddTodo", local: true) do %>
 
-        <%= date_field_tag 'from_date', nil, class:"AddTodo-date" %>
-        <%= date_field_tag 'to_date', nil, class:"AddTodo-date" %>
+<div class="date-container">
+  <div class="date-bar">
+    <h3>FROM-DATE</h3>
+    <%= date_field_tag 'from_date', nil, class:"AddTodo-date" %>
+  </div>
+  <div class="date-bar">
+    <h3>TO-DATE</h3>
+    <%= date_field_tag 'to_date', nil, class:"AddTodo-date" %>
+  </div>
+</div>
 
-        <%= button_tag value='Add', class:"AddTodo-button" %>
-      <% end %>
+<div class="search-button">
+  <%= button_tag value='FIND', class:"search-button" %>
+</div>
+
+<h3 class="report-heading">OR</h3>
+<div class="search-container">
+  <%= number_field_tag 'search_id', nil, class:"searchbar", placeholder: "search-id" %>
+  <%= button_tag value='SEARCH' %>
+</div>
+
+
+<% end %>

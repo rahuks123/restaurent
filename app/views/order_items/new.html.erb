@@ -1,5 +1,6 @@
 <div class="myorder-container">
-<% @current_user.orders.order(date: :desc).all.each do |order| %>
+<% if @current_user.orders.any? %>
+<% @current_user.orders.order(id: :desc).all.each do |order| %>
   <% if order.status == "confirmed" || order.status == "delivered"%>
   <ul class="myorder-box">
 
@@ -20,4 +21,7 @@
   </ul>
   <% end %>
 <% end %>
+  <% else %>
+    <p class="myorder-message"> SORRY, BUT YOU HAVE NOT PLACED ANY ORDER </p>
+  <% end %>
 </div>

@@ -7,7 +7,7 @@
       <p class="col-2"> STATUS </p>
     </div>
 
-    <% @report.all.each do |report| %>
+    <% @report.order(id: :desc).all.each do |report| %>
     <% user = User.find(report.user_id)%>
     <div class="row">
         <p class="col-2"><%= report.id %></p>
