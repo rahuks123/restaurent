@@ -1,12 +1,23 @@
+/* ###  order  ### */
+.delivered-button {
+  background-color: goldenrod;
+  color: #fff;
+  border: 0;
+  border-radius: 5px;
+  padding: 2px 4px;
+  font-size: 19px;
+}
 table {
   border-collapse: collapse;
+  margin-left: 15%;
+  margin-top: 20px;
 }
 
 table,
 th,
 td {
   border: 5px solid black;
-  padding: 10px;
+  padding: 7px 10px;
   font-size: 24px;
 }
 table.order-table {
@@ -32,6 +43,8 @@ table.order-table {
 .myorder-box {
   border: black solid 2px;
   border-radius: 7px;
+  background-color: rgb(51, 71, 90);
+  color: white;
 }
 .myorder-item-value {
   padding-right: 15px;

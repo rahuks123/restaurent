@@ -19,6 +19,7 @@ img {
   content: " ";
   padding-left: 15px;
 }
+
 .TodoSectionTitle-text {
   text-transform: uppercase;
   font-size: 27px;
@@ -68,20 +69,41 @@ img {
   display: flex;
   justify-content: space-between;
 }
-.MenuNew {
-  width: 50%;
-  text-align: center;
-}
-
-.ItemNew {
-  width: 50%;
-  text-align: center;
-  height: 550px;
-  border-left: 6px solid black;
-}
 .special-features {
   display: flex;
 }
 .quantity {
   max-width: 70px;
+}
+.add-button {
+  background-color: goldenrod;
+  border: none;
+  border-radius: 4px;
+  color: #fff;
+  font-size: 18px;
+  padding: 2px;
+}
+.activate-button {
+  background-color: goldenrod;
+  color: #fff;
+  border: 0;
+  border-radius: 5px;
+  padding: 2px 4px;
+  font-size: 19px;
+  margin-left: 20px;
+}
+
+/* ###  add menu  ### */
+.MenuNew {
+  width: 450px;
+  box-shadow: 0 10px 8px #888888;
+  text-align: center;
+  margin-left: 60px;
+}
+.ItemNew {
+  width: 450px;
+  box-shadow: 0 10px 8px #888888;
+  text-align: center;
+  margin-right: 60px;
+  padding-bottom: 5px;
 }

@@ -9,15 +9,14 @@
     <% OrderItem.all.each do |order_item| %>
       <% if order_item.order_id == order.id%>
         <li class="myorder-items">
-            <p class="myorder-item-value"><%= order_item.menu_item_name %> x <%= order_item.quantity %></p>
-            <p class="myorder-item-value"><%= order_item.menu_item_price %> rs</p>
+          <p class="myorder-item-value"><%= order_item.menu_item_name %> x <%= order_item.quantity %></p>
+          <p class="myorder-item-value"><%= order_item.menu_item_price %> rs</p>
         </li>
       <% end %>
     <% end %>
 
     <p class="myorder-total"> TOTAL:  <%= order.total %></p>
     <p class="myorder-total"> DATE OF ORDER <%= order.date %></p>
-
   </ul>
   <% end %>
 <% end %>

@@ -2,6 +2,12 @@
 
 .Signing-page {
   text-align: center;
+  width: 450px;
+  box-shadow: 0 10px 8px #888888;
+  text-align: center;
+  padding-bottom: 20px;
+  margin: auto;
+  margin-top: 90px;
 }
 
 .NewUsers-title {
@@ -33,23 +39,43 @@
   border-radius: 8px;
 }
 
-/* ######  users button   ####### */
+/* ######  users   ####### */
 
+table.user-table {
+  margin-left: 100px;
+}
 .role-change {
   content: " ";
   display: block;
+}
+th.users-heading {
+  font-size: 25px;
+  padding: 5px 30px;
+}
+td.user-attributes {
+  font-size: 20px;
+  padding: 5px 60px;
+  text-align: center;
 }
 .upgrade-button {
   padding: 5px;
   margin: 0 auto;
   font-size: 20px;
-  background-color: lightgreen;
+  background-color: goldenrod;
+  color: #fff;
+  border-radius: 7px;
 }
-
+.users-back-buttom {
+  background-color: green;
+  width: 70px;
+  text-align: center;
+  font-size: 24px;
+  border-radius: 4px;
+}
 /* #####  header  ###### */
 
 .User-name {
-  color: black;
+  color: rgb(212, 202, 202);
   display: flex;
   justify-content: space-between;
 }

@@ -17,7 +17,7 @@ nav {
   margin: 0;
 }
 nav ul {
-  background-color: rgb(177, 177, 177);
+  background-color: rgb(52, 59, 124);
   overflow: hidden;
   margin: 0;
   padding: 0;
@@ -35,10 +35,10 @@ ul.navbar li a {
   min-height: 16px;
   padding: 14px;
   text-transform: uppercase;
-  color: black;
+  color: #fff;
 }
 ul.navbar li a:hover {
-  background-color: rgb(75, 75, 83);
+  background-color: rgb(0, 0, 0);
   color: white;
 }
 
@@ -95,7 +95,7 @@ ul.navbar.responsive li a {
 }
 .row {
   display: block;
-  flex-wrap: wrap;
+  /* flex-wrap: wrap; */
   align-items: center;
   color: black;
 }

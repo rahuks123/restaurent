@@ -16,7 +16,7 @@
         <p class="col-4"> ------- </p>
       <% end %>
       <%= form_with url: "/menus/#{item.id}",local:true, method: "PUT" do %>
-        <p><input type="submit" value="Activate"></p>
+        <p><input type="submit" value="Activate" class="activate-button"></p>
       <% end %>
   </div>
 <% end %>
@@ -28,7 +28,7 @@
 
 <section class="menu-rendering">
   <%= render partial: "menu_items-section", locals: {
-    section_title: "starter",
+    section_title: "starters",
     menuitems: MenuItem.starter,
   } %>
 
