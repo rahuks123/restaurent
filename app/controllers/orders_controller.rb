@@ -22,11 +22,14 @@ class OrdersController < ApplicationController
       order.status = "confirmed"
       order.date = Date.today.to_s(:long)
       order.save!
+      flash[:notice] = "items succesfully ordered"
+      redirect_to order_items_path
     elsif order.status == "confirmed"
       order.status = "delivered"
       order.delivered_at = Date.today.to_s(:long)
       order.save!
       flash[:notice] = "order deleivered"
+      redirect_to new_order_path
     end
   end
 end

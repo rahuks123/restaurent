@@ -9,7 +9,7 @@ class MenuItemsController < ApplicationController
 
   def create
     menu = Menu.current_menu
-    MenuItem.create!(
+    new_item = MenuItem.create(
       name: params[:name],
       category: params[:category],
       price: params[:price],
@@ -17,12 +17,19 @@ class MenuItemsController < ApplicationController
       description: params[:description],
       image: params[:image],
     )
+    if new_item.save!
+      flash[:notice] = "menu item succefully added"
+    else
+      flash[:notice] = "menu item was not added"
+    end
+    redirect_to new_menu_path
   end
 
   def destroy
     id = params[:id]
     order = MenuItem.find(id)
     order.destroy
+    flash[:notice] = "Item removed from menu"
     redirect_to menu_items_path
   end
 end

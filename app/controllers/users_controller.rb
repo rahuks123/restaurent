@@ -18,6 +18,7 @@ class UsersController < ApplicationController
     user = User.find(id)
     user.role = "manager"
     user.save!
+    flash[:notice] = "THE USER HAS BEEN UPGRADED"
     redirect_to users_path
   end
 

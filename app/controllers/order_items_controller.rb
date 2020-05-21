@@ -19,6 +19,7 @@ class OrderItemsController < ApplicationController
       menu_item_name: menu_item.name,
       quantity: params[:quantity],
     )
+    redirect_to menu_items_path
   end
 
   def update
@@ -28,6 +29,7 @@ class OrderItemsController < ApplicationController
     id = params[:id]
     order = OrderItem.find(id)
     order.destroy
+    flash[:notice] = "Item removed from cart"
     redirect_to order_items_path
   end
 end
