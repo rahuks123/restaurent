@@ -13,9 +13,9 @@
   <td class="user-attributes"><p><%= user.name%></p></td>
   <td class="user-attributes"><p> <%= user.email %></p></td>
   <td class="user-attributes"><p><%= user.role %></p></td>
-  <%= form_with(url: "/users/#{user.id}" ,local: true, method: "put" ) do %>
-    <td class="user-attributes"><input type="submit" value="upgrade" class="upgrade-button"></td>
-  <% end %>
+  <td><%= form_with(url: "/users/#{user.id}" ,local: true, method: "put" ) do %>
+    <input type="submit" value="upgrade" class="upgrade-button">
+  <% end %></td>
 </tr>
 <% end %>
 </tr>
