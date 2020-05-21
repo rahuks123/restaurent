@@ -1,22 +1,24 @@
 <p class="myorder-total"> YOUR CART </P>
 
 <ul class="myorder-box">
-<% cart_price = 0%>
+<% cart_price = 0 %>
   <% OrderItem.all.each do |item|%>
     <% order_item = Order.find(item.order_id)%>
-    <% if order_item.status == "being created" %>
-      <li class="myorder-items">
-          <p class="myorder-item-value"><%= item.menu_item_name %> x <%= item.quantity %></p>
-          <p class="myorder-item-value"><%= item.menu_item_price %> rs</p>
-          <% cart_price += (item.menu_item_price * item.quantity) %>
-          <% order_item.total = cart_price %>
-          <% order_item.save! %>
-          <a  href="javascript:void(0)" >
-            <%= form_with(url: "/order_items/#{item.id}" , method: "delete") do %>
-              <input class="OrderItem-delete" type='image' src="delete.png">
-            <% end %>
-          </a>
-      </li>
+    <% if order_item%>
+      <% if order_item.status == "being created" %>
+        <li class="myorder-items">
+            <p class="myorder-item-value"><%= item.menu_item_name %> x <%= item.quantity %></p>
+            <p class="myorder-item-value"><%= item.menu_item_price %> rs</p>
+            <% cart_price += (item.menu_item_price * item.quantity) %>
+            <% order_item.total = cart_price %>
+            <% order_item.save! %>
+            <a  href="javascript:void(0)" >
+              <%= form_with(url: "/order_items/#{item.id}" , method: "delete") do %>
+                <input class="OrderItem-delete" type='image' src="delete.png">
+              <% end %>
+            </a>
+        </li>
+      <% end %>
     <% end %>
   <% end %>
 </ul>

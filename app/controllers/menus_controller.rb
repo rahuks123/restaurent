@@ -4,14 +4,14 @@ class MenusController < ApplicationController
   end
 
   def create
-    menu = Menu.create(
+    menu = Menu.new(
       name: params[:name],
       active_menu: false,
     )
-    if menu.save!
+    if menu.save
       flash[:notice] = "MENU ITEM SUCCESFULLY ADDED"
     else
-      flash[:error] = "MENU WAS NOT ADDED"
+      flash[:error] = menu.errors.full_messages.join(", ")
     end
     redirect_to new_menu_path
   end

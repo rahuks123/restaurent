@@ -9,7 +9,7 @@ class MenuItemsController < ApplicationController
 
   def create
     menu = Menu.current_menu
-    new_item = MenuItem.create(
+    new_item = MenuItem.new(
       name: params[:name],
       category: params[:category],
       price: params[:price],
@@ -17,10 +17,10 @@ class MenuItemsController < ApplicationController
       description: params[:description],
       image: params[:image],
     )
-    if new_item.save!
+    if new_item.save
       flash[:notice] = "menu item succefully added"
     else
-      flash[:notice] = "menu item was not added"
+      flash[:error] = new_item.errors.full_messages.join(" ")
     end
     redirect_to new_menu_path
   end

@@ -1,4 +1,8 @@
 class MenuItem < ApplicationRecord
+  validates :name, presence: true
+  validates :price, presence: true
+  validates :category, presence: true
+
   belongs_to :menu
   has_one_attached :image
 

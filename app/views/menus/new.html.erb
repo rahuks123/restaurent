@@ -20,7 +20,7 @@
 <%= form_with url: menu_items_path  do |form| %>
   <div class="Form-section">
     <p class="FormInput-label">DESCRIPTION</p>
-    <%= form.text_field :description, class:"Form-input" %>
+    <%= form.text_field :description, autofocus: true, class:"Form-input" %>
   </div>
 
   <div class="Form-section">
