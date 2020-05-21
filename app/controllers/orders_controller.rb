@@ -26,6 +26,7 @@ class OrdersController < ApplicationController
       order.status = "delivered"
       order.delivered_at = Date.today.to_s(:long)
       order.save!
+      flash[:notice] = "order deleivered"
     end
   end
 end

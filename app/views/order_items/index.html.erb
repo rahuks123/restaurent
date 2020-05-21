@@ -30,6 +30,7 @@
 <div class="confirm">
  <% order = @current_user.orders.being_created %>
  <% if order %>
+<%= flash[:notice] = "order placed" %>
   <%= form_with url: "/orders/#{order.id}", local: true, method: "PATCH" do %>
    <input type="submit" value="CONFIRM" class="cart-confirm-button">
   <% end %>
