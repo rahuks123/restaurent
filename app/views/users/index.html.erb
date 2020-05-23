@@ -1,22 +1,21 @@
-<p class="users-back-buttom"><%= link_to "BACK", "/" %></p>
-
-
 <table class="user-table">
-<tr class="user-row">
-  <th><h4 class="users-heading">NAME OF USER</h4></th>
-  <th><h4 class="users-heading">EMAIL</h4></th>
-  <th><h4 class="users-heading">ROLE</h4></th>
-  <th><h4 class="users-heading">ACTIVATE</h4></th>
-<tr>
-<% User.find_each do |user|%>
-<tr class="user-row">
-  <td class="user-attributes"><p><%= user.name%></p></td>
-  <td class="user-attributes"><p> <%= user.email %></p></td>
-  <td class="user-attributes"><p><%= user.role %></p></td>
-  <td><%= form_with(url: "/users/#{user.id}" ,local: true, method: "put" ) do %>
-    <input type="submit" value="upgrade" class="upgrade-button">
-  <% end %></td>
-</tr>
-<% end %>
-</tr>
+  <tr class="user-row">
+    <th><h4 class="users-heading">NAME OF USER</h4></th>
+    <th><h4 class="users-heading">EMAIL</h4></th>
+    <th><h4 class="users-heading">ROLE</h4></th>
+    <th><h4 class="users-heading">ACTIVATE</h4></th>
+  <tr>
+
+  <% User.find_each do |user|%>
+
+  <tr class="user-row">
+    <td class="user-attributes"><p><%= user.name%></p></td>
+    <td class="user-attributes"><p> <%= user.email %></p></td>
+    <td class="user-attributes"><p><%= user.role %></p></td>
+    <td><%= form_with(url: "/users/#{user.id}" ,local: true, method: "put" ) do %>
+      <input type="submit" value="upgrade" class="upgrade-button">
+    <% end %></td>
+  </tr>
+  <% end %>
+  </tr>
 </table>

@@ -1,0 +1,30 @@
+<body class="update-menuitem">
+  <% item = MenuItem.find(params[:id]) %>
+  <section class="edit-menu">
+    <%= form_with(url: "/menu_items/#{item.id}" ,local: true, method: "patch" ) do |form| %>
+      <div class="Form-section">
+        <p class="FormInput-label">DESCRIPTION</p>
+        <%= form.text_field :description, value: item.description, autofocus: true, class:"Form-input" %>
+      </div>
+
+      <div class="Form-section">
+        <p class="FormInput-label">NAME OF ITEM</p>
+        <%= form.text_field :name, value: item.name, class:"Form-input" %>
+      </div>
+
+      <div class="Form-section">
+        <p class="FormInput-label">PRICE</p>
+        <%= form.number_field :price, value: item.price,class:"Form-input"%>
+      </div>
+
+      <div class="Form-section">
+        <p class="FormInput-label">CATEGORY</p>
+        <%= form.text_field :category , value: item.category, class:"Form-input"%>
+      </div>
+
+      <div>
+        <%= form.submit "UPDATE", class: "Form-submit" %>
+      </div>
+    <% end %>
+  </section>
+</body>

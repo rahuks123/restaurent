@@ -10,26 +10,32 @@
     <% menuitems.all.each do |item|%>
       <% if menu.id == item.menu_id %>
         <div class="MenuDisplay">
-            <%= image_tag(item.image, height:200, width:200) if item.image.attached? %>
-            <div class="heading">
-              <p class="item-name"> <%= item.name %></p>
-              <p class="item-price"><b><%= item.price %></b>rs</p>
-            </div>
-            <div class="special-features">
-              <% if @current_user.role == "owner"%>
-              <a  href="javascript:void(0)" >
-                  <%= form_with(url: "/menu_items/#{item.id}" , method: "delete") do %>
-                    <input class="OrderItem-delete" type='image' src="delete.png">
-                  <% end %>
-              </a>
+          <% if item.image.attached? %>
+            <% if @current_user.role == "owner" %>
+              <%= link_to image_tag(item.image, height:200, width:200), edit_menu_item_path(id: item.id), method: "get" %>
+            <% else %>
+              <%= image_tag(item.image, height:200, width:200) %>
             <% end %>
+          <% end %>
+          <div class="heading">
+            <p class="item-name"> <%= item.name %></p>
+            <p class="item-price"><b><%= item.price %></b>rs</p>
+          </div>
+          <div class="special-features">
+            <% if @current_user.role == "owner"%>
+            <a  href="javascript:void(0)" >
+                <%= form_with(url: "/menu_items/#{item.id}" , method: "delete") do %>
+                  <input class="OrderItem-delete" type='image' src="delete.png">
+                <% end %>
+            </a>
+          <% end %>
 
-             <%= form_with  url: order_items_path(menu_item_id: item.id) , local: true, method: "POST"  do  |f|%>
-              <%= number_field_tag 'quantity', nil, class: "quantity" %>
-              <input type="submit" value="ADD" class="add-button">
-             <% end %>
-            </div>
-            <p style="width:310px"class="description"><i><%= item.description %></i></p>
+            <%= form_with  url: order_items_path(menu_item_id: item.id) , local: true, method: "POST"  do  |f|%>
+            <%= number_field_tag 'quantity', nil, class: "quantity" %>
+            <input type="submit" value="ADD" class="add-button">
+            <% end %>
+          </div>
+          <p style="width:310px"class="description"><i><%= item.description %></i></p>
 
         </div>
       <% end %>

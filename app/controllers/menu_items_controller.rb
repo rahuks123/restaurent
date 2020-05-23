@@ -7,6 +7,22 @@ class MenuItemsController < ApplicationController
     render "menu_items/new"
   end
 
+  def edit
+    render "menu_items/edit"
+  end
+
+  def update
+    id = params[:id]
+    item = MenuItem.find(id)
+    item.name = params[:name]
+    item.category = params[:category]
+    item.price = params[:price]
+    item.description = params[:description]
+    flash[:notice] = "the changes has been upadated"
+    item.save!
+    redirect_to menu_items_path
+  end
+
   def create
     menu = Menu.current_menu
     new_item = MenuItem.new(

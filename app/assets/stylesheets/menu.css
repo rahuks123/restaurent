@@ -94,16 +94,34 @@ img {
 }
 
 /* ###  add menu  ### */
+body.new_menu_body {
+  background-color: rgb(208, 226, 231);
+}
 .MenuNew {
   width: 450px;
   box-shadow: 0 10px 8px #888888;
+  background-color: beige;
   text-align: center;
   margin-left: 60px;
 }
 .ItemNew {
   width: 450px;
   box-shadow: 0 10px 8px #888888;
+  background-color: beige;
   text-align: center;
   margin-right: 60px;
   padding-bottom: 5px;
+}
+.edit-menu {
+  background-color: beige;
+  width: 450px;
+  display: block;
+  box-shadow: 0 10px 8px #888888;
+  text-align: center;
+  padding-bottom: 5px;
+  padding-top: 5px;
+  margin: 5% auto;
+}
+body.update-menuitem {
+  background-color: rgb(208, 226, 231);
 }

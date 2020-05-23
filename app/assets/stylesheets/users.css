@@ -1,11 +1,15 @@
 /* #####     SIGN UP PAGE    ###### */
-
+body.new_user_body {
+  background-color: rgb(208, 226, 231);
+}
 .Signing-page {
   text-align: center;
   width: 450px;
   box-shadow: 0 10px 8px #888888;
+  background-color: beige;
   text-align: center;
   padding-bottom: 20px;
+  padding-top: 2px;
   margin: auto;
   margin-top: 90px;
 }
