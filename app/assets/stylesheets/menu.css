@@ -14,10 +14,11 @@ img {
   display: block;
 }
 .category-wise-menu {
+  width: 100%;
   display: flex;
   flex-wrap: wrap;
   content: " ";
-  padding-left: 15px;
+  margin: 0;
 }
 
 .TodoSectionTitle-text {
