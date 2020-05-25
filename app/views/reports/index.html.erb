@@ -12,19 +12,17 @@
   </div>
 </div>
 
-<div class="search-container">
-  <%= button_tag value='FIND', class:"search-button" %>
-</div>
-
 <h3 class="report-heading">OR</h3>
 <div class="search-container">
+
   <%= number_field_tag 'search_id', nil,
                        autofocus: true,
                         class:"searchbar",
                         placeholder: "search-id"
   %>
-  <%= button_tag value='SEARCH' ,class: "search-button" %>
 </div>
 
-
+<div class="search-container">
+  <%= button_tag value='FIND', class:"search-button" %>
+</div>
 <% end %>
