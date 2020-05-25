@@ -22,17 +22,19 @@
         <li><a href=/orders/new> ORDER </a></li>
         <li><a href=/order_items> WALK-IN </a></li>
         <li><a href=/reports> REPORTS </a></li>
+        <li><%= link_to "MY-ACCOUNT", edit_user_path(id: @current_user.id), method: "get" %></li>
       <% elsif @current_user.role == "manager" %>
         <li><a href=/about> HOME </a></li>
         <li><a href=/menu_items> MENU </a></li>
         <li><a href=/orders/new> ORDER </a></li>
         <li><a href=/order_items> WALK-IN </a></li>
+        <li><%= link_to "MY-ACCOUNT", edit_user_path(id: @current_user.id), method: "get" %></li>
       <% elsif @current_user.role == "user"%>
         <li><a href=/about> HOME </a></li>
         <li><a href=/menu_items> MENU </a></li>
         <li><a href=/order_items> CART </a></li>
         <li><a href=/order_items/new> MY-ORDERS </a></li>
-        <li><%= link_to "EDIT-ACCOUNT", edit_user_path(id: @current_user.id), method: "get" %></li>
+        <li><%= link_to "MY-ACCOUNT", edit_user_path(id: @current_user.id), method: "get" %></li>
 
       <% end %>
       <li class="navbar-right"><%= link_to "SIGN-OUT", destroy_session_path, method: "delete" %></li>

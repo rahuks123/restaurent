@@ -1,10 +1,10 @@
-<body class="new_user_body">`
+<body class="new_user_body">
   <section class="Signing-page">
     <p class="NewUsers-title"> WELCOME <%= @current_user.name%> </p>
 
     <section class="UsersNew">
 
-      <%= form_with url: user_path , method: "patch" do |form| %>
+      <%= form_with url: user_path(edit_user: "modify"), local: true, method: "patch" do |form| %>
         <div class="Form-section">
           <p class="FormInput-label">First-name</p>
           <%= form.text_field :name, value: @current_user.name, class:"Form-input" %>
@@ -16,7 +16,7 @@
         </div>
 
         <div>
-          <%= form.submit "Sign-up!", class: "Form-submit" %>
+          <%= form.submit "Update", class: "Form-submit" %>
         </div>
       <% end %>
     </section>

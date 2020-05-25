@@ -20,12 +20,23 @@ class UsersController < ApplicationController
   end
 
   def update
-    id = params[:id]
-    user = User.find(id)
-    user.role = "manager"
-    user.save!
-    flash[:notice] = "THE USER HAS BEEN UPGRADED"
-    redirect_to users_path
+    if params[:edit_user] == "modify"
+      user = User.find(current_user.id)
+      user.name = params[:name]
+      user.email = params[:email]
+      user.save!
+      flash[:notice] = "THE DETAILS HAS BEEN UPGRADED"
+      redirect_to edit_user_path
+    else
+      if current_user.role == "owner"
+        id = params[:id]
+        user = User.find(id)
+        user.role = "manager"
+        user.save!
+        flash[:notice] = "THE USER HAS BEEN UPGRADED"
+        redirect_to users_path
+      end
+    end
   end
 
   def create
