@@ -51,6 +51,11 @@ img {
 .item-price {
   padding-left: 50px;
 }
+.info-img {
+  width: 30px;
+  display: block;
+  margin-left: 20px;
+}
 .description {
   padding-left: 10px;
 }
@@ -81,6 +86,7 @@ img {
 }
 .special-features {
   display: flex;
+  align-items: center;
 }
 .quantity {
   max-width: 70px;

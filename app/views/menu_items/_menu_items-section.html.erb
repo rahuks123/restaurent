@@ -18,17 +18,17 @@
             <p class="item-price"><b><%= item.price %></b>rs</p>
           </div>
           <div class="special-features">
-            <% if @current_user.role == "owner"%>
-            <a  href="javascript:void(0)" >
-                <%= form_with(url: "/menu_items/#{item.id}" , method: "delete") do %>
-                  <input class="OrderItem-delete" type='image' src="delete.png">
-                <% end %>
-            </a>
-          <% end %>
-
             <%= form_with  url: order_items_path(menu_item_id: item.id) , local: true, method: "POST"  do  |f|%>
             <%= number_field_tag 'quantity', nil, class: "quantity" %>
             <input type="submit" value="ADD" class="add-button">
+            <% end %>
+           <% if @current_user.role == "owner"%>
+              <a  href="javascript:void(0)" >
+                  <%= form_with(url: "/menu_items/#{item.id}" , method: "delete") do %>
+                    <input class="OrderItem-delete" type='image' src="delete.png">
+                  <% end %>
+              </a>
+              <%= link_to image_tag("info.png", class: "info-img"), edit_menu_item_path(id: item.id), method: "get" %>
             <% end %>
           </div>
           <p style="width:310px"class="description"><i><%= item.description %></i></p>
