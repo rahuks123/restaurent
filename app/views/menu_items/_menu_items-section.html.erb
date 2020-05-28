@@ -10,13 +10,9 @@
     <% menuitems.all.each do |item|%>
       <% if menu.id == item.menu_id %>
         <div class="MenuDisplay">
-          <% if item.image.attached? %>
-            <% if @current_user.role == "owner" %>
-              <%= link_to image_tag(item.image, height:200, width:200), edit_menu_item_path(id: item.id), method: "get" %>
-            <% else %>
-              <%= image_tag(item.image, height:200, width:200) %>
-            <% end %>
-          <% end %>
+          <div class="img-container">
+            <%= image_tag "#{item.url}", alt: "image of #{item.name}", class: "menuitem-img" %>
+          </div>
           <div class="heading">
             <p class="item-name"> <%= item.name %></p>
             <p class="item-price"><b><%= item.price %></b>rs</p>
