@@ -18,7 +18,7 @@
     <% order.order_items.all.each do |item|%>
     <% menu_item = MenuItem.find(item.menu_item_id)%>
      <div class="MenuDisplay">
-            <%= image_tag(menu_item.image, height:200, width:200) if menu_item.image.attached? %>
+            <%= image_tag "#{item.url}", alt: "image of #{item.name}", class: "menuitem-img" %>
             <div class="heading">
               <p class="item-name"> <%= menu_item.name %></p>
               <p class="item-price"><%= menu_item.price %></p>
