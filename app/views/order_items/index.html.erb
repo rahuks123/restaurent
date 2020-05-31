@@ -1,22 +1,22 @@
-<p class="myorder-total"> YOUR CART </P>
+<p class="myorder-total"> YOUR CART </p>
 
 <ul class="myorder-box">
-<% cart_price = 0 %>
-  <% OrderItem.all.each do |item|%>
-    <% order_item = Order.find(item.order_id)%>
-    <% if order_item%>
+  <% cart_price = 0 %>
+  <% OrderItem.all.each do |item| %>
+    <% order_item = Order.find(item.order_id) %>
+    <% if order_item %>
       <% if order_item.status == "being created" %>
         <li class="myorder-items">
-            <p class="myorder-item-value"><%= item.menu_item_name %> x <%= item.quantity %></p>
-            <p class="myorder-item-value"><%= item.menu_item_price %> rs</p>
-            <% cart_price += (item.menu_item_price * item.quantity) %>
-            <% order_item.total = cart_price %>
-            <% order_item.save! %>
-            <a  href="javascript:void(0)" >
-              <%= form_with(url: "/order_items/#{item.id}" , method: "delete") do %>
-                <input class="OrderItem-delete" type='image' src="delete.png">
-              <% end %>
-            </a>
+          <p class="myorder-item-value"> <%= item.menu_item_name %> x <%= item.quantity %> </p>
+          <p class="myorder-item-value"> <%= item.menu_item_price %> rs </p>
+          <% cart_price += (item.menu_item_price * item.quantity) %>
+          <% order_item.total = cart_price %>
+          <% order_item.save! %>
+          <a  href="javascript:void(0)" >
+            <%= form_with(url: "/order_items/#{item.id}" , method: "delete") do %>
+              <input class="OrderItem-delete" type='image' src="delete.png">
+            <% end %>
+          </a>
         </li>
       <% end %>
     <% end %>
@@ -24,17 +24,17 @@
 </ul>
 
 <% if cart_price == 0 %>
-  <p class="cart-message">IS EMPTY</p>
-<% else%>
-<br>
-<br>
-  <P> TOTAL :  <%= cart_price %></p>
-<div class="confirm">
- <% order = @current_user.orders.being_created %>
- <% if order %>
-  <%= form_with url: "/orders/#{order.id}", method: "PATCH" do %>
-   <input type="submit" value="CONFIRM" class="cart-confirm-button">
-  <% end %>
+  <p class="cart-message"> IS EMPTY </p>
+<% else %>
+  <br>
+  <br>
+  <p> TOTAL :  <%= cart_price %> </p>
+  <div class="confirm">
+    <% order = @current_user.orders.being_created %>
+    <% if order %>
+      <%= form_with url: "/orders/#{order.id}", method: "PATCH" do %>
+       <input type="submit" value="CONFIRM" class="cart-confirm-button">
+      <% end %>
+    <% end %>
+  </div>
 <% end %>
- </div>
-<%  end %>

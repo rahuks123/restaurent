@@ -1,30 +1,30 @@
-<% id= params[:id] %>
+<% id = params[:id] %>
 <% order = Order.find(id) %>
-<% user = User.find(order.user_id)%>
+<% user = User.find(order.user_id) %>
 
 <div class="container">
   <div class="heading-value">
-    <p class="heading1">NAME:  </p>
-    <p class="value"> <%= user.name %></p>
+    <p class="heading1"> NAME: </p>
+    <p class="value"> <%= user.name %> </p>
   </div>
 
   <div class="heading-value">
-    <p class="heading1">TOTAL:  </p>
+    <p class="heading1"> TOTAL:  </p>
     <p class="value"> <%= order.total %> </p>
   </div>
 
-    <p class="heading1">ORDER-ITEMS: </p>
+  <p class="heading1"> ORDER-ITEMS: </p>
   <div class="heading-value">
-    <% order.order_items.all.each do |item|%>
-    <% menu_item = MenuItem.find(item.menu_item_id)%>
-     <div class="MenuDisplay">
-            <%= image_tag "#{item.url}", alt: "image of #{item.name}", class: "menuitem-img" %>
-            <div class="heading">
-              <p class="item-name"> <%= menu_item.name %></p>
-              <p class="item-price"><%= menu_item.price %></p>
-            </div>
-          <p style="width:310px"class="description"><i><%= menu_item.description %></i></p>
-    </div>
+    <% order.order_items.all.each do |item| %>
+    <% menu_item = MenuItem.find(item.menu_item_id) %>
+      <div class="MenuDisplay">
+        <%= image_tag "#{menu_item.url}", alt: "image of #{menu_item.name}", class: "menuitem-img" %>
+        <div class="heading">
+          <p class="item-name"> <%= menu_item.name %> </p>
+          <p class="item-price"> <%= menu_item.price %> </p>
+        </div>
+        <p style="width:310px"class="description"> <i> <%= menu_item.description %> </i> </p>
+      </div>
     <% end %>
   </div>
 </div>

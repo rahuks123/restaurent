@@ -78,10 +78,6 @@ p.User-name {
     visibility: hidden;
   }
 }
-
-users-back-buttom {
-  list-style: none;
-}
 .backimage-home {
   background: url(/assets/bg2.jpg);
   width: 100%;

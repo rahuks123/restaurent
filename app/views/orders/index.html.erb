@@ -1,22 +1,21 @@
-  <main class="container">
+<main class="container">
+  <div class="row">
+    <p class="col-2"> ID </p>
+    <p class="col-2"> NAME </p>
+    <p class="col-2"> ORDERED-DATE </p>
+    <p class="col-2"> STATUS </p>
+  </div>
 
-    <div class="row">
-      <p class="col-2"> ID </p>
-      <p class="col-2"> NAME </p>
-      <p class="col-2"> ORDERED-DATE </p>
-      <p class="col-2"> STATUS </p>
-    </div>
-
-    <% @report.order(id: :desc).all.each do |report| %>
+  <% @report.order(id: :desc).all.each do |report| %>
     <% user = User.find(report.user_id)%>
     <div class="row">
-        <p class="col-2"><%= report.id %></p>
-        <p class="col-2"><%= user.name %></p>
-        <p class="col-2"><%= report.date %></p>
-        <p class="col-2"><%= report.status %></p>
-        <%= form_with url: "/orders/#{report.id}" , method: "get", local: true do %>
-        <td> <%= button_tag value='view' %><td>
-        <% end %>
+      <p class="col-2"> <%= report.id %> </p>
+      <p class="col-2"> <%= user.name %> </p>
+      <p class="col-2"> <%= report.date %> </p>
+      <p class="col-2"> <%= report.status %> </p>
+      <%= form_with url: "/orders/#{report.id}" , method: "get", local: true do %>
+       <%= button_tag value='view', class: "viewbutton" %>
+      <% end %>
     </div>
-    <% end %>
+  <% end %>
 </main>

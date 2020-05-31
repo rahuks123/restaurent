@@ -3,15 +3,14 @@
     <p class="NewUsers-title"> WELCOME <%= @current_user.name%> </p>
 
     <section class="UsersNew">
-
       <%= form_with url: user_path(edit_user: "modify"), local: true, method: "patch" do |form| %>
         <div class="Form-section">
-          <p class="FormInput-label">First-name</p>
+          <p class="FormInput-label"> First-name </p>
           <%= form.text_field :name, value: @current_user.name, class:"Form-input" %>
         </div>
 
         <div class="Form-section">
-          <p class="FormInput-label">Email</p>
+          <p class="FormInput-label"> Email </p>
           <%= form.email_field :email , value: @current_user.email, class:"Form-input"%>
         </div>
 

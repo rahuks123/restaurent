@@ -1,30 +1,28 @@
-<div class="row">
-  <% if @current_user.role == "owner" %>
-    <p class="col-4">NAME OF MENU</p>
-    <p class="col-4">STATUS</p>
-    <p class="col-4">ACTIVE</p>
-</div>
-
-<section>
-<% Menu.all.each do |item| %>
+<% if @current_user.role == "owner" %>
   <div class="row">
-      <p class="col-4"><%= item.name %></p>
-      <% if item.active_menu %>
-        <p class="col-4"> active </p>
-      <% else %>
-        <p class="col-4"> ------- </p>
-      <% end %>
-      <%= form_with url: "/menus/#{item.id}",local:true, method: "PUT" do %>
-        <p><input type="submit" value="Activate" class="activate-button"></p>
-      <% end %>
+      <p class="col-4"> NAME OF MENU </p>
+      <p class="col-4"> STATUS </p>
+      <p class="col-4"> ACTIVE </p>
   </div>
+
+  <section>
+    <% Menu.all.each do |item| %>
+      <div class="row">
+        <p class="col-4"> <%= item.name %> </p>
+        <% if item.active_menu %>
+          <p class="col-4"> active </p>
+        <% else %>
+          <p class="col-4"> ------- </p>
+        <% end %>
+        <%= form_with url: "/menus/#{item.id}",local:true, method: "PUT" do %>
+          <p> <input type="submit" value="Activate" class="activate-button"> </p>
+        <% end %>
+      </div>
+    <% end %>
+  </section>
 <% end %>
-<% end %>
 
-</section>
-
-  <h1 class="menu-tag">MENU</h1>
-
+<h1 class="menu-tag"> MENU </h1>
 <section class="menu-rendering">
   <%= render partial: "menu_items-section", locals: {
     section_title: "starters",

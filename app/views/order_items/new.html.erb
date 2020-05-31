@@ -1,25 +1,31 @@
 <div class="myorder-container">
-<% if @current_user.orders.any? %>
-<% @current_user.orders.order(id: :desc).all.each do |order| %>
-  <% if order.status == "confirmed" || order.status == "delivered"%>
-  <ul class="myorder-box">
-
-    <p class="myorder-total"> STATUS: <%= order.status %></p>
-
-    <% OrderItem.all.each do |order_item| %>
-      <% if order_item.order_id == order.id%>
-        <li class="myorder-items">
-          <p class="myorder-item-value"><%= order_item.menu_item_name %> x <%= order_item.quantity %></p>
-          <p class="myorder-item-value"><%= order_item.menu_item_price %> rs</p>
-        </li>
+  <% if @current_user.orders.any? %>
+    <% @current_user.orders.order(id: :desc).all.each do |order| %>
+      <% if order.status == "confirmed" || order.status == "delivered" %>
+        <ul class="myorder-box">
+          <% if order.status == "delivered" %>
+            <p class="myorder-total"> DELIVERED ON <%= order.delivered_at.strftime("%B %e, %Y") %> </p>
+          <% else %>
+            <p class="myorder-total"> STATUS: <%= order.status %> </p>
+          <% end %>
+          <%= order.status %> </p>
+          <% OrderItem.all.each do |order_item| %>
+            <% if order_item.order_id == order.id %>
+              <li class="myorder-items">
+                <p class="myorder-item-value">
+                  <%= order_item.menu_item_name %> x <%= order_item.quantity %>
+                </p>
+                <p class="myorder-item-value">
+                  <%= order_item.menu_item_price %> rs
+                </p>
+              </li>
+            <% end %>
+          <% end %>
+          <p class="myorder-total"> TOTAL:  <%= order.total %></p>
+          <p class="myorder-total"> DATE OF ORDER <%= order.date %></p>
+        </ul>
       <% end %>
     <% end %>
-
-    <p class="myorder-total"> TOTAL:  <%= order.total %></p>
-    <p class="myorder-total"> DATE OF ORDER <%= order.date %></p>
-  </ul>
-  <% end %>
-<% end %>
   <% else %>
     <p class="myorder-message"> SORRY, BUT YOU HAVE NOT PLACED ANY ORDER </p>
   <% end %>

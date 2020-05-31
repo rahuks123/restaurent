@@ -2,12 +2,12 @@
 <section class="menu">
 
   <section class="TodoSection">
-      <h2 class="TodoSectionTitle-text"><%= section_title %></h2>
+    <h2 class="TodoSectionTitle-text"> <%= section_title %> </h2>
   </section>
 
   <section class="category-wise-menu">
-    <% menu = Menu.current_menu%>
-    <% menuitems.all.each do |item|%>
+    <% menu = Menu.current_menu %>
+    <% menuitems.all.each do |item| %>
       <% if menu.id == item.menu_id %>
         <div class="MenuDisplay">
           <div class="img-container">
@@ -15,27 +15,32 @@
           </div>
           <div class="heading">
             <p class="item-name"> <%= item.name %></p>
-            <p class="item-price"><b><%= item.price %></b>rs</p>
+            <p class="item-price"> <b><%= item.price %></b>rs </p>
           </div>
           <div class="special-features">
-            <%= form_with  url: order_items_path(menu_item_id: item.id) , local: true, method: "POST"  do  |f|%>
-            <%= number_field_tag 'quantity', nil, class: "quantity" %>
-            <input type="submit" value="ADD" class="add-button">
+            <%= form_with  url: order_items_path(menu_item_id: item.id),
+                         local: true,
+                         method: "POST"  do  |f|
+              %>
+              <%= number_field_tag 'quantity', nil, class: "quantity" %>
+              <input type="submit" value="ADD" class="add-button">
             <% end %>
-           <% if @current_user.role == "owner"%>
+           <% if @current_user.role == "owner" %>
               <a  href="javascript:void(0)" >
                   <%= form_with(url: "/menu_items/#{item.id}" , method: "delete") do %>
                     <input class="OrderItem-delete" type='image' src="delete.png">
                   <% end %>
               </a>
-              <%= link_to image_tag("info.png", class: "info-img"), edit_menu_item_path(id: item.id), method: "get" %>
+              <%= link_to image_tag("info.png", class: "info-img"),
+                          edit_menu_item_path(id: item.id),
+                           method: "get"
+               %>
             <% end %>
           </div>
-          <p style="width:310px"class="description"><i><%= item.description %></i></p>
+          <p style="width:310px"class="description"> <i> <%= item.description %> </i> </p>
 
         </div>
       <% end %>
     <% end %>
-  </div>
   </section>
 </section>

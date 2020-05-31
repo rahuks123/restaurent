@@ -42,42 +42,6 @@ ul.navbar li a:hover {
   color: white;
 }
 
-/*########### DROPDOWN ##############*/
-
-ul.navbar li.dropdown {
-  display: none;
-}
-#section-1-gradient {
-  background: blue;
-  background: -webkit-linear-gradient(blue, lightblue);
-}
-/*######## AFTER CLICKING ########3*/
-@media screen and (max-width: 680px) {
-  ul.navbar li:not(:nth-child(1)) {
-    display: none;
-  }
-  ul.navbar li.dropdown {
-    display: block;
-    float: right;
-  }
-}
-ul.navbar.responsive li.dropdown {
-  position: absolute;
-  top: 0;
-  right: 0;
-}
-ul.navbar.responsive {
-  position: relative;
-}
-ul.navbar.responsive li {
-  display: inline;
-  float: none;
-}
-ul.navbar.responsive li a {
-  display: block;
-  text-align: left;
-}
-
 /* ###########  THE MENU ITEMS   ############### */
 .Menu-Title {
   display: flex;
@@ -95,7 +59,6 @@ ul.navbar.responsive li a {
 }
 .row {
   display: block;
-  /* flex-wrap: wrap; */
   align-items: center;
   color: black;
 }
