@@ -5,7 +5,11 @@
 <div class="container">
   <div class="heading-value">
     <p class="heading1"> NAME: </p>
-    <p class="value"> <%= user.name %> </p>
+    <% if @current_user.role == "owner" || @current_user.role == "manager" %>
+      <p class="value"> Walk-in </p>
+    <% else %>
+      <p class="value"> <%= user.name %> </p>
+    <% end %>
   </div>
 
   <div class="heading-value">

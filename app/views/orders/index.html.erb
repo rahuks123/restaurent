@@ -10,7 +10,11 @@
     <% user = User.find(report.user_id)%>
     <div class="row">
       <p class="col-2"> <%= report.id %> </p>
+      <% if @current_user.role == "owner" || @current_user.role == "manager" %>
+        <p class="col-2"> Walk-in </p>
+      <% else %>
       <p class="col-2"> <%= user.name %> </p>
+      <% end %>
       <p class="col-2"> <%= report.date %> </p>
       <p class="col-2"> <%= report.status %> </p>
       <%= form_with url: "/orders/#{report.id}" , method: "get", local: true do %>
