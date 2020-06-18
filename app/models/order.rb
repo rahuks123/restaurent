@@ -9,4 +9,7 @@ class Order < ApplicationRecord
   def self.report(from_date, to_date)
     all.where("date >= ? and date <= ? ", from_date, to_date)
   end
+  def self.per_user(search_id)
+    all.where("user_id = ?", search_id)
+  end
 end
