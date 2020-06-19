@@ -8,7 +8,6 @@
           <% else %>
             <p class="myorder-total"> STATUS: <%= order.status %> </p>
           <% end %>
-          <%= order.status %> </p>
           <% OrderItem.all.each do |order_item| %>
             <% if order_item.order_id == order.id %>
               <li class="myorder-items">

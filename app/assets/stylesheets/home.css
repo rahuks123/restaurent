@@ -51,7 +51,7 @@ p.User-name {
   margin-bottom: 20px;
   font-size: 18px;
   animation: fadeOut 6s;
-  background-color: rgb(194, 73, 73);
+  background-color: rgb(177, 37, 37);
   color: rgb(207, 212, 218);
 }
 .flash-notice {
@@ -60,7 +60,7 @@ p.User-name {
   font-size: 18px;
   animation: fadeOut 6s;
   color: rgb(207, 212, 218);
-  background-color: rgb(88, 167, 88);
+  background-color: rgb(40, 95, 40);
 }
 .flash-message {
   width: 50%;
