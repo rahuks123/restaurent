@@ -10,7 +10,7 @@
     <% user = User.find(report.user_id)%>
     <div class="row">
       <p class="col-2"> <%= report.id %> </p>
-      <% if @current_user.role == "owner" || @current_user.role == "manager" %>
+      <% if user.role == "owner" || user.role == "manager" %>
         <p class="col-2"> Walk-in </p>
       <% else %>
       <p class="col-2"> <%= user.name %> </p>

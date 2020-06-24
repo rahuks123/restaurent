@@ -5,10 +5,10 @@
 <div class="container">
   <div class="heading-value">
     <p class="heading1"> NAME: </p>
-    <% if @current_user.role == "owner" || @current_user.role == "manager" %>
-      <p class="value"> Walk-in </p>
-    <% else %>
+    <% if user.role == "user" %>
       <p class="value"> <%= user.name %> </p>
+    <% else %>
+      <p class="value"> Walk-in </p>
     <% end %>
   </div>
 
