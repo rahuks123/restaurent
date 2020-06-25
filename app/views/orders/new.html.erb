@@ -20,14 +20,18 @@
           <% end %>
           <td class="order-attributes"> <%= order.status %> </td>
           <td class="order-attributes"> <%= order.date %> </td>
-          <td class="order-attributes"> <%= order.delivered_at %> </td>
+          <% if order.delivered_at %>
+            <td class="order-attributes"> <%= order.delivered_at.strftime("%B %e, %Y") %> </td>
+          <% else %>
+            <td class="order-attributes"> -------- </td>
+          <% end %>
           <td>
             <%= form_with url: "/orders/#{order.id}", local:true, method: "PUT" do %>
               <input type="submit" value="DELIVERED" class="delivered-button">
             <% end %>
           </td>
           <td>
-              <%= form_with url: "/orders/#{order.id}" , method: "get", local: true do %>
+            <%= form_with url: "/orders/#{order.id}" , method: "get", local: true do %>
               <%= button_tag value='view', class: "viewbutton" %>
             <% end %>
           </td>
