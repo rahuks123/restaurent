@@ -5,12 +5,13 @@
     <th class="order-header"> ORDERED-ON </th>
     <th class="order-header"> DELIVERED ON </th>
     <th class="order-header"> UPGRADE </th>
+    <th class="order-header"> INVOICE </th>
   </tr>
 
   <% Order.order(id: :desc).all.each do |order| %>
     <div class="cart">
       <tr class="order-row">
-        <% if order.status == "confirmed" %>
+        <% if order.status == "confirmed" || order.status == "delivered" %>
           <% user= User.find(order.user_id) %>
           <% if user.role == "owner"|| user.role == "manager" %>
             <td class="order-attributes"> walk-in </td>
@@ -25,7 +26,12 @@
               <input type="submit" value="DELIVERED" class="delivered-button">
             <% end %>
           </td>
-        <% end %>
+          <td>
+              <%= form_with url: "/orders/#{order.id}" , method: "get", local: true do %>
+              <%= button_tag value='view', class: "viewbutton" %>
+            <% end %>
+          </td>
+          <% end %>
       </tr>
     </div>
   <% end %>
